@@ -30,46 +30,105 @@
         "next": "Next",
         "submit": "Submit"
       }
-    },
-    "(authentication)": {
-      "login": {
-        "title": "Login",
-        "toggleTheme": "Toggle theme",
-        "emailLabel": "Email Address",
-        "emailPlaceholder": "Enter your email",
-        "passwordLabel": "Password",
-        "passwordPlaceholder": "Enter your password",
-        "submitButton": "Login",
-        "remember": "Remember",
-        "noAccountMessage": "Don't have an account?",
-        "registerLink": "Register",
-        "success": "Login successful!",
-        "error": "Invalid credentials.",
-        "unexpectedError": "An unexpected error occurred."
-      },
-      "register": {
-        "title": "Register",
-        "toggleTheme": "Toggle theme",
-        "usernameLabel": "Username",
-        "usernamePlaceholder": "Enter your username",
-        "emailLabel": "Email",
-        "emailPlaceholder": "Enter your email",
-        "passwordLabel": "Password",
-        "passwordPlaceholder": "Enter your password",
-        "confirmPasswordLabel": "Confirm Password",
-        "confirmPasswordPlaceholder": "Confirm your password",
-        "submitButton": "Register",
-        "remember": "Remember",
-        "alreadyRegisteredMessage": "Already registered?",
-        "loginLink": "Login",
-        "success": "Registration successful!",
-        "error": "An error occurred.",
-        "unexpectedError": "An unexpected error occurred."
-      }
     }
   },
   "features": {
     "authentication": {
+      "components": {
+        "Login": {
+          "title": "Limbo",
+          "subtitle": "Optimize your personal processes for greater efficiency and player convenience today!",
+          "loginTitle": "Login",
+          "toggleTheme": "Toggle theme",
+          "labels": {
+            "email": "Email Address",
+            "password": "Password"
+          },
+          "placeholders": {
+            "email": "Enter your email",
+            "password": "Enter your password"
+          },
+          "buttons": {
+            "submit": "Login",
+            "remember": "Remember"
+          },
+          "messages": {
+            "forgotPassword": "Forgot password?",
+            "noAccount": "Don't have an account?",
+            "registerLink": "Register",
+            "success": "Login successful!",
+            "error": "Invalid credentials.",
+            "unexpectedError": "An unexpected error occurred."
+          }
+        },
+        "Register": {
+          "title": "Register",
+          "subtitle": "Unlock the full potential of Limbo by creating your account",
+          "toggleTheme": "Toggle theme",
+          "labels": {
+            "username": "Username",
+            "firstname": "First Name",
+            "lastname": "Last Name",
+            "email": "Email",
+            "age": "Age",
+            "status": "Status",
+            "image": "Profile Image",
+            "password": "Password",
+            "confirmPassword": "Confirm Password"
+          },
+          "placeholders": {
+            "username": "Enter a username",
+            "firstname": "Enter your first name",
+            "lastname": "Enter your last name",
+            "email": "Enter a valid email",
+            "age": "Enter your age",
+            "status": "Select your status",
+            "password": "Enter a password between 8 and 30 characters long",
+            "confirmPassword": "Confirm your password"
+          },
+          "buttons": {
+            "submit": "Register",
+            "agree": "I agree to the <link>Terms and Conditions</link>"
+          },
+          "messages": {
+            "alreadyRegistered": "Already registered?",
+            "loginLink": "Login",
+            "success": "Registration successful!",
+            "error": "An error occurred.",
+            "unexpectedError": "An unexpected error occurred."
+          },
+          "status": {
+            "school": "School Student",
+            "college": "College Student",
+            "university": "University Student",
+            "employee": "Employed",
+            "search_edu": "Looking for Education",
+            "search_work": "Looking for a Job"
+          }
+        },
+        "Reset": {
+          "title": "Limbo",
+          "subtitle": "Optimize your personal processes for greater efficiency and player convenience today!",
+          "resetTitle": "Reset password",
+          "toggleTheme": "Toggle theme",
+          "labels": {
+            "email": "Email Address"
+          },
+          "placeholders": {
+            "email": "Enter your email"
+          },
+          "buttons": {
+            "submit": "Reset"
+          },
+          "messages": {
+            "alreadyRegistered": "Already registered?",
+            "loginLink": "Login",
+            "success": "Login successful!",
+            "error": "Invalid credentials.",
+            "unexpectedError": "An unexpected error occurred."
+          }
+        }
+      }
     }
   },
   "shared": {
@@ -79,6 +138,11 @@
         "en": "English",
         "ru": "Russian",
         "kk": "Kazakh"
+      },
+      "ThemeToggle": {
+        "light": "Light",
+        "dark": "Dark",
+        "system": "System"
       }
     }
   },
@@ -86,21 +150,42 @@
     "passwordAndConfirmMismatch": "Password and confirmation do not match!",
     "unknownError": "Unknown error",
     "errors": {
-      "username": {
-        "min": "Username must be at least 3 characters long.",
-        "max": "Username must not exceed 30 characters."
+      "firstname": {
+        "min": "First name is required."
+      },
+      "lastname": {
+        "min": "Last name is required."
       },
       "email": {
         "invalid": "Invalid email format."
       },
+      "age": {
+        "typeError": "Age must be a number.",
+        "min": "Age cannot be negative.",
+        "max": "Age must be no more than 70 years."
+      },
+      "status": {
+        "required": "You must select a status."
+      },
+      "image": {
+        "required": "Image is required."
+      },
       "password": {
-        "min": "Password must be at least 8 characters long.",
+        "min": "Password must be at least {min} characters long.",
         "weak": "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character.",
         "mismatch": "Password and confirmation do not match!"
       }
     }
   },
   "services": {
+    "INVALID_DATA": "Invalid input data",
+    "EMAIL_EXISTS": "Email already exists",
+    "WRONG_PASSWORD": "Incorrect password",
+    "ALL_STEPS_COMPLETED": "All steps have already been completed for this scenario",
+    "INVALID_HOME_UNIQUE_CODE": "Invalid home unique_code. You must scan another home first",
+    "TOKEN_EXPIRED": "Token expired",
+    "UNAUTHORIZED": "Password or email not valid",
+    "SCENARIO_NOT_FOUND": "Scenario for user not found",
     "unknownError": "Unknown error",
     "serverError": "Server error"
   }

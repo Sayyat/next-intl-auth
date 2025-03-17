@@ -92,7 +92,7 @@ export default async function RootLayout({
                 <ToastContainer
                     limit={3}
                     toastClassName={
-                        "font-bold text-secondaryColor flex items-center p-4 "
+                        "font-bold bg-accent text-accent-foreground flex items-center p-4 z-[1002]"
                     }
                 />
             </AllProviders>

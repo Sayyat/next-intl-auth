@@ -1,7 +1,13 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    // Usually es2017 or esnext for Next.js (es5 is quite old, but up to you)
+    "target": "ESNext",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    // Existing configs
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -13,16 +19,32 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "types": ["@testing-library/jest-dom"],
+    // Add "next-auth" to types array so it merges your custom next-auth.d.ts
+    "types": [
+      "@testing-library/jest-dom",
+      "next-auth"
+    ],
     "plugins": [
       {
         "name": "next"
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": [
+        "./src/*"
+      ]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  // Ensure your custom types folder is included
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "next-env.d.ts",
+    "src/**/*.d.ts",
+    ".next/types/**/*.ts"
+  ],
+  // Exclude node_modules as usual
+  "exclude": [
+    "node_modules"
+  ]
 }

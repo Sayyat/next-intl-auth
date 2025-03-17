@@ -1,123 +1,143 @@
 import NextAuth, {CredentialsSignin} from "next-auth"
-import Credentials from "next-auth/providers/credentials";
-
-import {createSignInSchema, createSignUpSchema} from "@/features/authentication/lib/zod";
-import {loginUser, registerUser} from "@/features/authentication/services/authService";
-import {z} from "zod";
-import {jwtDecode} from "jwt-decode";
-import {getTranslator} from "@/locales/config/translation";
-import {ICustomJwtPayload} from "@/features/authentication/type";
+import Credentials from "next-auth/providers/credentials"
+import {getTranslator} from "@/locales/config/translation"
+import {createLoginSchema, createRegisterSchema} from "@/features/authentication/lib/zod"
+import {registerUser, loginUser, refreshToken} from "@/features/authentication/services/server"
+import {jwtDecode} from "jwt-decode"
+import {IUser} from "@/types/global";
 
 class InvalidLoginError extends CredentialsSignin {
     constructor(message: string) {
-        super(message);
-        this.name = "InvalidLoginError";
-        this.code = message; // You can define a custom code if needed
+        super(message)
+        this.name = "InvalidLoginError"
+        this.code = message // Custom error code if needed
     }
 }
 
+interface IAccessToken {
+    token_type: "access" | "refresh"
+    exp: number
+    iat: number
+    jti: string
+    user_id: number
+}
 
 export const {handlers, signIn, signOut, auth} = NextAuth({
     providers: [
         Credentials({
-            id: "signup",
-            name: "signup",
+            id: "register",
+            name: "Register",
             credentials: {
-                username: {},
+                firstname: {},
+                lastname: {},
                 email: {},
+                age: {},
+                status: {},
                 password: {},
-                confirm: {},
             },
-            async authorize(credentials, req) {
-                console.log({credentials})
+            async authorize(credentials) {
                 const t = await getTranslator();
-                const {success, data, error} = await (await createSignUpSchema()).safeParseAsync(credentials);
 
+                // 1. Validate login input
+                const {success, data, error} = await createRegisterSchema(t).safeParseAsync(credentials)
                 if (!success) {
-                    if (error instanceof z.ZodError) {
-                        const firstError = error.errors[0];
-                        throw new InvalidLoginError(firstError.message || t("auth.unknownError"));
-                    }
-
-                    // Fallback for unexpected errors
-                    throw new InvalidLoginError(t("auth.unknownError"));
-                }
-                const {username, email, password, confirm} = data
-
-                if (password !== confirm) {
-                    throw new InvalidLoginError(t("auth.passwordAndConfirmMismatch"))
+                    throw new InvalidLoginError(error.errors[0]?.message || t("auth.unknownError"))
                 }
 
-                let result = await registerUser(username, email, password);
+                const result = await registerUser(data);
 
                 if (!result.success) {
                     throw new InvalidLoginError(result.error);
                 }
-                const decodedAccessToken = jwtDecode(result.data.access) as ICustomJwtPayload
-                if (!decodedAccessToken) {
-                    throw new InvalidLoginError(t("auth.invalidToken"));
-                }
 
-                console.log({in: 'signup', decodedAccessToken});
-                return decodedAccessToken.user
+                // ✅ If the backend returns access/refresh tokens, store them in the session immediately
+                return result.data;
             },
         }),
         Credentials({
             id: "login",
-            name: "login",
+            name: "Login",
             credentials: {
                 email: {},
                 password: {},
             },
             async authorize(credentials, req) {
-                const t = await getTranslator();
-                const {success, data, error} = await (await createSignInSchema()).safeParseAsync(credentials);
-
+                const t = await getTranslator()
+                // 1. Validate login input
+                const {success, data, error} = await createLoginSchema(t).safeParseAsync(credentials)
                 if (!success) {
-                    if (error instanceof z.ZodError) {
-                        const firstError = error.errors[0];
-                        throw new InvalidLoginError(firstError.message || t("auth.unknownError"));
-                    }
-
-                    // Fallback for unexpected errors
-                    throw new InvalidLoginError(t("auth.unknownError"));
+                    throw new InvalidLoginError(error.errors[0]?.message || t("auth.unknownError"))
                 }
-                const {email, password} = data
 
-                let result = await loginUser(email, password);
+                // 2. Attempt to login user
+                const result = await loginUser(data)
 
                 if (!result.success) {
-                    throw new InvalidLoginError(result.error);
-                }
-                const decodedAccessToken = jwtDecode(result.data.access) as ICustomJwtPayload
-                if (!decodedAccessToken) {
-                    throw new InvalidLoginError(t("auth.invalidToken"));
+                    throw new InvalidLoginError(result.error)
                 }
 
-                console.log({in: 'login', decodedAccessToken});
-                return decodedAccessToken.user
+                return result.data
             },
-        })
+        }),
     ],
+
+    trustHost: true,
     session: {
-        strategy: 'jwt',
+        strategy: "jwt",
     },
+
     callbacks: {
-        async jwt({token, user, account}) {
-            if (account && user) {
-                token.user = user;
+        // Called when token is created/updated
+        async jwt({token, user}) {
+            if (user) {
+                const customUser = user as IUser
+                const {access, refresh, ...profile} = customUser
+                token.user = profile
+                token.access = access
+                token.refresh = refresh
             }
-            return token;
+
+            // Check for expiration if we have token.access
+            if (token.access) {
+                try {
+                    const decoded = jwtDecode<IAccessToken>(token.access as string)
+                    const currentTimeSeconds = Math.floor(Date.now() / 1000)
+                    const isExpired = decoded.exp <= currentTimeSeconds + 30;  // Refresh 30 seconds before expiration
+                    // console.log({isExpired})
+                    if (isExpired) {
+                        const refreshResponse = await refreshToken(token.refresh as string)
+                        if (refreshResponse.success) {
+                            token.access = refreshResponse.data.access
+                        } else {
+                            console.log("refresh token failed")
+                            return {}
+                        }
+                    }
+                } catch (error) {
+                    console.error("⚠️ Error refreshing token:", error);
+                    return {}
+                }
+            }
+            return token
         },
+
+        // Called to update session
         async session({session, token}) {
-            if (token) {
-                session.user = token.user as any;
+            // Copy token.user -> session.user
+            if (token.user) {
+                const user = token.user as IUser
+                session.user = {
+                    ...user,
+                    emailVerified: null
+                }
+                session.access = token.access as string
             }
-            // console.log({ in: 'session', session });
-            return session;
+            return session
         },
     },
+
     pages: {
-        signIn: '/login',
+        signIn: "/login",
+        error: "/login?error=true",
     },
 })

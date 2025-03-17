@@ -6,6 +6,7 @@ import {LanguageSelect} from "@/shared/components/LanguageSelect";
 import {useTranslations} from "next-intl";
 import {Menu, X, LogOut, Moon, Sun} from "lucide-react";
 import {useTheme} from "@/shared/hooks/useTheme";
+import {ThemeSelect} from "@/shared/components/ThemeSelect";
 
 export function Header() {
     const {data} = useSession();
@@ -35,14 +36,10 @@ export function Header() {
 
             {/* Mobile: Language Selector, Theme Switcher, and Hamburger Menu */}
             <div className="flex items-center gap-4 md:hidden">
-                <LanguageSelect wrapperClassName="flex items-center" className="w-auto"/>
-                <button onClick={toggleTheme} aria-label={t("toggleTheme")}>
-                    {theme === "light" ? (
-                        <Moon className="w-6 h-6 text-gray-600"/>
-                    ) : (
-                        <Sun className="w-6 h-6 text-gray-300"/>
-                    )}
-                </button>
+                <div className="flex items-start">
+                    <LanguageSelect/>
+                    <ThemeSelect/>
+                </div>
                 <button
                     onClick={() => setMenuOpen((prev) => !prev)}
                     className="text-primaryColor"
@@ -54,15 +51,10 @@ export function Header() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-4 text-primaryColor">
-                <LanguageSelect/>
-                <button onClick={toggleTheme} aria-label={t("toggleTheme")}
-                        className="text-primaryColor">
-                    {theme === "light" ? (
-                        <Moon className="w-6 h-6"/>
-                    ) : (
-                        <Sun className="w-6 h-6"/>
-                    )}
-                </button>
+                <div className="flex items-start">
+                    <LanguageSelect/>
+                    <ThemeSelect/>
+                </div>
                 <span className="text-primaryColor">{data?.user?.email || t("unknownUser")}</span>
                 <button
                     onClick={() => signOut()}

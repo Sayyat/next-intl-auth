@@ -1,0 +1,12 @@
+services:
+  next-intl-auth:
+    build:
+      context: ../../
+      dockerfile: docker/production/Dockerfile
+      cache_from:
+        - next-intl-auth:latest
+    image: next-intl-auth
+    ports:
+      - "3000:3000"
+    env_file:
+      - ../../.env.production

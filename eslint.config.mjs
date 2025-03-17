@@ -22,6 +22,7 @@ const eslintConfig = [
   ),
   {
     files: ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"],
+    ignores: ["node_modules/**", "dist/**", ".next/**"], // Exclude unnecessary directories
     languageOptions: {
       globals: {
         React: "readonly",

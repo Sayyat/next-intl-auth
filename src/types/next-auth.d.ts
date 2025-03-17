@@ -1,19 +1,14 @@
-import "next-auth";
+import {IBaseUser} from "@/types/global";  // Import your IUser type
 
 declare module "next-auth" {
-    interface User {
-        id: string;
-        username: string;
-        email: string;
-        is_active?: boolean;
-        is_staff?: boolean;
-    }
-
     interface Session {
-        user: User;
+        user: IBaseUser;
+        access: string;
     }
 
     interface JWT {
-        user: User;
+        access: string;
+        refresh: string;
+        user: IBaseUser; // Store your custom user data in JWT
     }
 }

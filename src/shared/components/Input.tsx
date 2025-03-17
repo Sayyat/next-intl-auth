@@ -1,8 +1,8 @@
-import React, {InputHTMLAttributes} from "react";
-import {cn} from "@/shared/lib/utils";
-import {Input as ShadCnInput} from "@/shared/components/ui/input"
-import {Label as ShadCnLabel} from "@/shared/components/ui/label"
-
+'use client';
+import React, { InputHTMLAttributes } from "react";
+import { cn } from "@/shared/lib/utils";
+import { Input as ShadCnInput } from "@/shared/components/ui/input";
+import { Label as ShadCnLabel } from "@/shared/components/ui/label";
 
 interface InputFieldProps extends InputHTMLAttributes<HTMLInputElement> {
     label: string;
@@ -22,12 +22,7 @@ export const Input: React.FC<InputFieldProps> = ({
     postfix,
     ...props
 }) => (
-    <div
-        className={cn(
-            "flex flex-col h-auto w-full", // Base styles for wrapper
-            wrapperClassName // Custom styles for wrapper
-        )}
-    >
+    <div className={cn("flex flex-col h-auto w-full", wrapperClassName)}>
         <ShadCnLabel
             htmlFor={props.id}
             className={cn(
@@ -40,16 +35,16 @@ export const Input: React.FC<InputFieldProps> = ({
         </ShadCnLabel>
         <div className="flex items-center w-full gap-2">
             <ShadCnInput
-                className={cn(className,
-                    !props.disabled ?"text-primaryColor" : "text-secondaryColor"
+                className={cn(
+                    className,
+                    !props.disabled ? "text-primaryColor" : "text-secondaryColor",
+                    props.type === "file" && "file:border-0 file:bg-primary file:text-primary-foreground file:py-2 file:px-4 file:rounded-md"
                 )}
                 {...props}
             />
             {postfix}
         </div>
-        <div className={
-            !props.disabled ? "text-primaryColor" : "text-secondaryColor"
-        }>
+        <div className={!props.disabled ? "text-primaryColor" : "text-secondaryColor"}>
             {hint}
         </div>
     </div>

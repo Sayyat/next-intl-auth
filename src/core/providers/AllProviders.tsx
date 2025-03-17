@@ -3,6 +3,7 @@ import {SessionProvider} from "next-auth/react";
 import React, {useState} from "react";
 import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
 import {ReactQueryDevtools} from "@tanstack/react-query-devtools";
+import {ThemeProvider} from "@/core/providers/ThemeProvider";
 
 export function AllProviders({
     children
@@ -11,11 +12,13 @@ export function AllProviders({
 }>) {
     const [queryClient] = useState(() => new QueryClient());
     return (
-        <SessionProvider>
-            <QueryClientProvider client={queryClient}>
-                {children}
-                <ReactQueryDevtools initialIsOpen={false}/>
-            </QueryClientProvider>
-        </SessionProvider>
+        <ThemeProvider>
+            <SessionProvider>
+                <QueryClientProvider client={queryClient}>
+                    {children}
+                    <ReactQueryDevtools initialIsOpen={false}/>
+                </QueryClientProvider>
+            </SessionProvider>
+        </ThemeProvider>
     )
 }

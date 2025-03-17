@@ -1,4 +1,5 @@
-NEXTAUTH_URL=http://127.0.0.1:3000
-NEXTAUTH_SECRET=<Your NextAuth secret>
-NEXT_PUBLIC_API_URL=http://127.0.0.1:8000
-API_URL=http://127.0.0.1:8000
+NEXTAUTH_URL=http://127.0.0.1:3001
+NEXTAUTH_SECRET=jDl4JCqvF7WSqFQd8IExXhMqU2pw9ggUBWvJqmPz39c=
+NEXT_PUBLIC_API_URL=https://quiz.ziz.kz
+API_URL=https://quiz.ziz.kz
+NODE_ENV=development
