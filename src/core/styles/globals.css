@@ -2,8 +2,6 @@
 
 @plugin 'tailwindcss-animate';
 
-@custom-variant dark (&:is(.dark *));
-
 @theme {
   --color-primary-border-color: var(--primary-border-color);
   --color-secondary-border-color: var(--secondary-border-color);
