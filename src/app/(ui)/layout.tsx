@@ -15,7 +15,7 @@ export default async function RootLayout({
     return (
         <div className="flex flex-col h-dvh bg-primaryBackgroundColor">
             {/* Header */}
-            <div className="min-h-16 max-h-32 flex-shrink-0">
+            <div className="min-h-16 max-h-32 shrink-0">
                 <Header/>
             </div>
 
@@ -25,7 +25,7 @@ export default async function RootLayout({
             </div>
 
             {/* Footer */}
-            <div className="h-16 border-t flex-shrink-0">
+            <div className="h-16 border-t shrink-0">
                 <Footer/>
             </div>
         </div>

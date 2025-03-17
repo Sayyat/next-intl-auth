@@ -81,7 +81,7 @@ const LoginPage: React.FC = () => {
                         name="email"
                         id="email"
                         required
-                        className="block w-full px-4 py-3 border rounded-lg shadow-sm focus:ring-accentColor focus:border-accentBorderColor text-lg text-primaryColor bg-primaryBackgroundColor"
+                        className="block w-full px-4 py-3 border rounded-lg shadow-xs focus:ring-accentColor focus:border-accentBorderColor text-lg text-primaryColor bg-primaryBackgroundColor"
                         placeholder={t("emailPlaceholder")}
                     />
                     <Input
@@ -90,7 +90,7 @@ const LoginPage: React.FC = () => {
                         name="password"
                         id="password"
                         required
-                        className="block w-full px-4 py-3 border rounded-lg shadow-sm focus:ring-accentColor focus:border-accentBorderColor text-lg text-primaryColor bg-primaryBackgroundColor"
+                        className="block w-full px-4 py-3 border rounded-lg shadow-xs focus:ring-accentColor focus:border-accentBorderColor text-lg text-primaryColor bg-primaryBackgroundColor"
                         placeholder={t("passwordPlaceholder")}
                     />
                     {/* Submit Button */}

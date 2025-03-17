@@ -83,7 +83,7 @@ const RegisterPage: React.FC = () => {
                         name="username"
                         id="username"
                         required
-                        className="block w-full px-4 py-3 border border-inactiveBorderColor rounded-lg shadow-sm focus:ring-accentColor focus:border-accentBorderColor text-lg text-primaryColor bg-inactiveBackground"
+                        className="block w-full px-4 py-3 border border-inactiveBorderColor rounded-lg shadow-xs focus:ring-accentColor focus:border-accentBorderColor text-lg text-primaryColor bg-inactiveBackground"
                         placeholder={t("usernamePlaceholder")}
                     />
                     <Input
@@ -92,7 +92,7 @@ const RegisterPage: React.FC = () => {
                         name="email"
                         id="email"
                         required
-                        className="block w-full px-4 py-3 border border-primary rounded-lg shadow-sm focus:ring-accentColor focus:border-accentBorderColor text-lg text-primaryColor bg-inactiveBackground"
+                        className="block w-full px-4 py-3 border border-primary rounded-lg shadow-xs focus:ring-accentColor focus:border-accentBorderColor text-lg text-primaryColor bg-inactiveBackground"
                         placeholder={t("emailPlaceholder")}
                     />
                     <Input
@@ -101,7 +101,7 @@ const RegisterPage: React.FC = () => {
                         name="password"
                         id="password"
                         required
-                        className="block w-full px-4 py-3 border border-inactiveBorderColor rounded-lg shadow-sm focus:ring-accentColor focus:border-accentBorderColor text-lg text-primaryColor bg-inactiveBackground"
+                        className="block w-full px-4 py-3 border border-inactiveBorderColor rounded-lg shadow-xs focus:ring-accentColor focus:border-accentBorderColor text-lg text-primaryColor bg-inactiveBackground"
                         placeholder={t("passwordPlaceholder")}
                     />
                     <Input
@@ -110,7 +110,7 @@ const RegisterPage: React.FC = () => {
                         name="confirm"
                         id="confirm"
                         required
-                        className="block w-full px-4 py-3 border border-inactiveBorderColor rounded-lg shadow-sm focus:ring-accentColor focus:border-accentBorderColor text-lg text-primaryColor bg-inactiveBackground"
+                        className="block w-full px-4 py-3 border border-inactiveBorderColor rounded-lg shadow-xs focus:ring-accentColor focus:border-accentBorderColor text-lg text-primaryColor bg-inactiveBackground"
                         placeholder={t("confirmPasswordPlaceholder")}
                     />
                     {/* Submit Button */}
