@@ -1,6 +1,4 @@
 import React from "react";
-import {redirect} from "next/navigation";
-import {auth} from "@/auth";
 import {Header} from "@/app/(ui)/_components/Header";
 import {Footer} from "@/app/(ui)/_components/Footer";
 
@@ -9,9 +7,6 @@ export default async function RootLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
-    const session = await auth();
-    if (!session) redirect("/login");
-
     return (
         <div className="flex flex-col h-dvh bg-primaryBackgroundColor">
             {/* Header */}
