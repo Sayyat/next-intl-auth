@@ -1,6 +1,7 @@
 import axios from "axios";
 import {env} from "@/core/data/env/client";
 import {getSession, signOut} from "next-auth/react";
+import {tokenStore} from "@/shared/lib/tokenStore";
 
 // Create an Axios instance for server-side requests
 export const apiClient = axios.create({
@@ -10,11 +11,16 @@ export const apiClient = axios.create({
 
 
 apiClient.interceptors.request.use(async (config) => {
-    const session = await getSession();
-    if (!session) {
-        console.warn("⚠️ No access token available! Request may fail.");
-    } else {
-        config.headers.Authorization = `Bearer ${session.access}`;
+    let token = tokenStore.get();
+
+    if (!token) {
+        const session = await getSession();
+        token = session?.access ?? null;
+        tokenStore.set(token); // Сохраняем токен в память
+    }
+
+    if (token) {
+        config.headers.Authorization = `Bearer ${token}`;
     }
 
     return config;

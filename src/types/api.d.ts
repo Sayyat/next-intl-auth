@@ -1,11 +1,17 @@
-export type ApiResponse<T> =
+export type IResponse<T> =
     | { success: true; data: T }
     | { success: false; error: string };
 
 
-export interface ApiListResponse<T> {
+export interface IPaginatedResponse<T> {
     count: number;
     items: T[];
+}
+
+
+export interface IPaginationParams extends Record<string, any> {
+    limit: number;
+    offset: number;
 }
 
 export interface PaginatedResponse<T> {

@@ -1,5 +1,5 @@
 // For completeness, here's the login function if needed:
-import {ApiResponse} from "@/types/api";
+import {IResponse} from "@/types/api";
 import {IUser} from "@/types/global";
 import {apiClient} from "@/services/server";
 import {handleResponse} from "@/services/api";
@@ -13,7 +13,7 @@ export interface IRegisterPayload {
 // Register a new user with multipart/form-data
 export const registerUser = async (
     payload: IRegisterPayload
-): Promise<ApiResponse<IUser>> => {
+): Promise<IResponse<IUser>> => {
     return await handleResponse<IUser>(
         apiClient.post("/api/auth/register", payload)
     );
@@ -27,7 +27,7 @@ export interface ILoginPayload {
 
 export const loginUser = async (
     payload: ILoginPayload
-): Promise<ApiResponse<IUser>> => {
+): Promise<IResponse<IUser>> => {
     return await handleResponse<IUser>(
         apiClient.post("/api/auth/login", payload)
     );

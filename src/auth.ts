@@ -103,19 +103,19 @@ export const {handlers, signIn, signOut, auth} = NextAuth({
                     const decoded = jwtDecode<IAccessToken>(token.access as string)
                     const currentTimeSeconds = Math.floor(Date.now() / 1000)
                     const isExpired = decoded.exp <= currentTimeSeconds + 30;  // Refresh 30 seconds before expiration
-                    // console.log({isExpired})
+                    console.log({isExpired})
                     if (isExpired) {
                         const refreshResponse = await refreshToken(token.refresh as string)
                         if (refreshResponse.success) {
                             token.access = refreshResponse.data.access
                         } else {
                             console.log("refresh token failed")
-                            return {}
+                            return null
                         }
                     }
                 } catch (error) {
                     console.error("⚠️ Error refreshing token:", error);
-                    return {}
+                    return null
                 }
             }
             return token
@@ -123,13 +123,7 @@ export const {handlers, signIn, signOut, auth} = NextAuth({
 
         // Called to update session
         async session({session, token}) {
-            // Copy token.user -> session.user
             if (token.user) {
-                const user = token.user as IUser
-                session.user = {
-                    ...user,
-                    emailVerified: null
-                }
                 session.access = token.access as string
             }
             return session

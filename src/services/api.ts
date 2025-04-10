@@ -1,7 +1,23 @@
 // Centralized error extraction
-import axios from "axios";
-import {ApiListResponse, ApiResponse} from "@/types/api";
+import axios, {AxiosInstance} from "axios";
+import {IPaginatedResponse, IPaginationParams, IResponse} from "@/types/api";
 import {getTranslator} from "@/locales/config/translation";
+import {DEFAULT_PAGINATION_PARAMS} from "@/shared/lib/constants";
+import {buildQueryParams} from "@/shared/lib/query";
+import {apiClient} from "@/services/client";
+
+export const paginatedGet = async <T>(
+    url: string,
+    params: IPaginationParams = DEFAULT_PAGINATION_PARAMS,
+    translator?: (key: string) => string
+): Promise<IResponse<IPaginatedResponse<T>>> => {
+    const query = buildQueryParams(params);
+    return await handleResponse<IPaginatedResponse<T>>(
+        apiClient.get(`${url}${query}`),
+        translator
+    );
+};
+
 
 export function extractErrorMessage(
     error: unknown,
@@ -15,7 +31,9 @@ export function extractErrorMessage(
             return translator("services.serverError")
         }
 
-        return translator(`services.${code}`) || message;
+        // ✅ Try to translate error code, otherwise return `message`
+        const translatedMessage = translator(`services.${code}`);
+        return translatedMessage !== `services.${code}` ? translatedMessage : message;
     }
     return translator("services.unknownError");
 }
@@ -24,7 +42,7 @@ export function extractErrorMessage(
 export async function handleResponse<T>(
     request: Promise<any>,
     translator?: (key: string) => string
-): Promise<ApiResponse<T>> {
+): Promise<IResponse<T>> {
     const t = translator || (await getTranslator());
     try {
         const response = await request;
@@ -35,18 +53,50 @@ export async function handleResponse<T>(
     }
 }
 
-// Handle API responses
-export async function handleListResponse<T>(
-    request: Promise<any>,
-): Promise<ApiListResponse<T>> {
-    try {
-        const response = await request;
-        return response.data as ApiListResponse<T>;
-    } catch (error) {
-        // console.error("API Error:", error);
-        return {
-            count: 0,
-            items: []
-        }
-    }
-}
+export const createApiService = (apiClient: AxiosInstance) => {
+    return {
+        postWithHandle: <T>(
+            url: string,
+            payload: unknown,
+            translator?: (key: string) => string
+        ): Promise<IResponse<T>> =>
+            handleResponse<T>(apiClient.post(url, payload), translator),
+
+        getWithHandle: <T>(
+            url: string,
+            translator?: (key: string) => string
+        ): Promise<IResponse<T>> =>
+            handleResponse<T>(apiClient.get(url), translator),
+
+        getPaginatedWithHandle: <T>(
+            url: string,
+            params: IPaginationParams = DEFAULT_PAGINATION_PARAMS,
+            translator?: (key: string) => string
+        ): Promise<IResponse<IPaginatedResponse<T>>> => {
+            const query = buildQueryParams(params);
+            return handleResponse<IPaginatedResponse<T>>(
+                apiClient.get(`${url}${query}`),
+                translator
+            );
+        },
+
+        patchWithHandle: <T>(
+            url: string,
+            payload: unknown,
+            translator?: (key: string) => string
+        ): Promise<IResponse<T>> =>
+            handleResponse<T>(apiClient.patch(url, payload), translator),
+
+        postFormWithHandle: <T>(
+            url: string,
+            formData: FormData,
+            translator?: (key: string) => string
+        ): Promise<IResponse<T>> =>
+            handleResponse<T>(
+                apiClient.post(url, formData, {
+                    headers: {"Content-Type": "multipart/form-data"},
+                }),
+                translator
+            )
+    };
+};
