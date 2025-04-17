@@ -7,10 +7,6 @@ import {useProfile} from "@/features/authentication";
 export default function Home() {
     const {data} = useProfile()
     const t = useTranslations("app.(ui).page");
-    const router = useRouter()
-    useEffect(() => {
-        router.push("/calculators/household-goods")
-    }, []);
     return (
         <div
             className=""
