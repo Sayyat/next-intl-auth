@@ -3,6 +3,7 @@ import {useMutation, useQueryClient} from "@tanstack/react-query";
 import {QUERY_KEYS} from "@/features/authentication/lib/queryKeys";
 import {tokenStore} from "@/shared/lib/tokenStore";
 import {toast} from "react-toastify";
+import {IRegisterPayload} from "@/features/authentication/types/payload";
 
 
 export const useAuth = () => {
@@ -32,15 +33,7 @@ export const useAuth = () => {
 
     // Register Mutation
     const registerMutation = useMutation({
-        mutationFn: async (credentials: {
-            email: string;
-            password: string;
-            firstname: string;
-            lastname: string;
-            phone_number: string;
-            organization_name: string;
-            city_id: number;
-        }) => {
+        mutationFn: async (credentials: IRegisterPayload) => {
             const response = await signIn("register", {
                 ...credentials,
                 redirect: false,

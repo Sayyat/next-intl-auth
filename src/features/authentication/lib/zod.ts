@@ -4,26 +4,26 @@ import {TranslationValues} from "use-intl";
 export const createRegisterSchema = (t: (key: string, values?: TranslationValues) => string) => {
     return z
         .object({
-            firstname: z.string().min(1, t("auth.errors.firstname.min")),
-
-            lastname: z.string().min(1, t("auth.errors.lastname.min")),
-
             email: z.string().email(t("auth.errors.email.invalid")),
+            firstname: z.string().min(1, t("auth.errors.firstname.min")),
+            lastname: z.string().min(1, t("auth.errors.lastname.min")),
+            middle_name: z.string().min(1, t("auth.errors.lastname.min")),
+            birthdate: z.string().min(1, t("auth.errors.lastname.min")),
+            iin: z.string().min(1, t("auth.errors.lastname.min")),
+
 
             phone_number: z
                 .string()
                 .min(11, t("auth.errors.phone.min")) // Ensures at least 7 digits
                 .max(15, t("auth.errors.phone.max")) // Limits to 15 digits
                 .regex(/^\+?[1-9]\d{6,14}$/, t("auth.errors.phone.invalid")), // Allows optional "+" & ensures valid digits
-
-            organization_name: z.string().min(1, t("auth.errors.organization.required")),
+            address: z.string().min(1, t("auth.errors.lastname.min")),
 
             city_id: z
                 .coerce.number({
                     required_error: t("auth.errors.city.required")
                 })
                 .min(0, t("auth.errors.city.required")),
-
             password: z
                 .string()
                 .min(8, t("auth.errors.password.min", {min: 8}))
@@ -51,19 +51,20 @@ export const createLoginSchema = (
 export const createEditProfileSchema = (t: (key: string, values?: TranslationValues) => string) => {
     return z
         .object({
-            firstname: z.string().min(1, t("auth.errors.firstname.min")),
-
-            lastname: z.string().min(1, t("auth.errors.lastname.min")),
-
             email: z.string().email(t("auth.errors.email.invalid")),
+            firstname: z.string().min(1, t("auth.errors.firstname.min")),
+            lastname: z.string().min(1, t("auth.errors.lastname.min")),
+            middle_name: z.string().min(1, t("auth.errors.lastname.min")),
+            birthdate: z.string().min(1, t("auth.errors.lastname.min")),
+            iin: z.string().min(1, t("auth.errors.lastname.min")),
+
 
             phone_number: z
                 .string()
                 .min(11, t("auth.errors.phone.min")) // Ensures at least 7 digits
                 .max(15, t("auth.errors.phone.max")) // Limits to 15 digits
                 .regex(/^\+?[1-9]\d{6,14}$/, t("auth.errors.phone.invalid")), // Allows optional "+" & ensures valid digits
-
-            organization_name: z.string().min(1, t("auth.errors.organization.required")),
+            address: z.string().min(1, t("auth.errors.lastname.min")),
 
             city_id: z
                 .coerce.number({

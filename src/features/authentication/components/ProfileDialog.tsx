@@ -49,12 +49,15 @@ export const ProfileDialog: React.FC<IProfileDialogProps> = ({
     const form = useForm({
         resolver: zodResolver(createEditProfileSchema(useTranslations())),
         defaultValues: {
+            email: profile?.email || "",
             firstname: profile?.firstname || "",
             lastname: profile?.lastname || "",
-            email: profile?.email || "",
+            middle_name: profile?.middle_name || "",
+            birthdate: profile?.birthdate || "",
+            iin: profile?.iin || "",
             phone_number: profile?.phone_number || "",
-            organization_name: profile?.organization_name || "",
             city_id: profile?.city?.id || undefined,
+            address: profile?.address || "",
         },
     });
 
@@ -221,62 +224,6 @@ export const ProfileDialog: React.FC<IProfileDialogProps> = ({
                                     <div
                                         className="w-full bg-muted px-4 py-2 rounded-xl">{profile?.phone_number || "—"}</div>
                                     <div className="w-full bg-muted px-4 py-2 rounded-xl">{profile?.email || "—"}</div>
-                                </>
-                            )}
-                        </div>
-                        <div className="flex items-center justify-between gap-8">
-                            {isEditing ? (
-                                <>
-                                    <FormField
-                                        control={form.control}
-                                        name="organization_name"
-                                        render={({field}) => (
-                                            <FormItem className="w-full">
-                                                <FormControl>
-                                                    <FloatingLabelInput
-                                                        {...field}
-                                                        label={t("labels.organization")}
-                                                        value={field.value}
-                                                        onChange={e => {
-                                                            form.setValue("organization_name", e.target.value)
-                                                        }}
-                                                    />
-                                                </FormControl>
-                                                <FormMessage/>
-                                            </FormItem>
-                                        )}/>
-                                    <FormField
-                                        control={form.control}
-                                        name="city_id"
-                                        render={({field}) => {
-                                            const options = cities?.success ? cities.data.items : []
-                                            return (
-                                                <FormItem className="w-full">
-                                                    <FormControl>
-                                                        <Select<ICity>
-                                                            {...field}
-                                                            name="city_id"
-                                                            options={options}
-                                                            label={t("labels.city")}
-                                                            optionValueKey="id"
-                                                            optionLabelKeys={["city_name"]}
-                                                            wrapperClassName="p-0"
-                                                            value={options.find(option => option.id === field.value)}
-                                                            onChange={(value) => form.setValue("city_id", value?.id)}
-                                                        />
-                                                    </FormControl>
-                                                    <FormMessage/>
-                                                </FormItem>
-                                            )
-                                        }}
-                                    />
-                                </>
-                            ) : (
-                                <>
-                                    <div
-                                        className="w-full bg-muted px-4 py-2 rounded-xl">{profile?.organization_name || "—"}</div>
-                                    <div
-                                        className="w-full bg-muted px-4 py-2 rounded-xl">{profile?.city?.city_name || "—"}</div>
                                 </>
                             )}
                         </div>

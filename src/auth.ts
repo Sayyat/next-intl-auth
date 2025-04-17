@@ -31,9 +31,12 @@ export const {handlers, signIn, signOut, auth} = NextAuth({
                 email: {},
                 firstname: {},
                 lastname: {},
+                middle_name: {},
+                birthdate: {},
+                iin: {},
                 phone_number: {},
-                organization_name: {},
                 city_id: {},
+                address: {},
                 password: {},
             },
             async authorize(credentials) {

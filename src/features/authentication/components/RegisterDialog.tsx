@@ -45,12 +45,15 @@ export const RegisterDialog: React.FC<IRegisterDialogProps> = ({open, setCurrent
     const form = useForm<TRegisterForm>({
         resolver: zodResolver(registerSchema),
         defaultValues: {
+            email: "",
             firstname: "",
             lastname: "",
-            email: "",
+            middle_name: "",
+            birthdate: "",
+            iin: "",
             phone_number: "",
-            organization_name: "",
             city_id: cities?.success && cities.data.items[0]?.id || undefined,
+            address: "",
             password: "",
             confirm: "",
         },
@@ -171,28 +174,6 @@ export const RegisterDialog: React.FC<IRegisterDialogProps> = ({open, setCurrent
                                             label={t("labels.phone")}
                                             value={field.value}
                                             onChange={(value) => form.setValue("phone_number", value)}
-                                        />
-                                    </FormControl>
-                                    <FormMessage/>
-                                </FormItem>
-                            )}
-                        />
-
-                        {/* ORGANIZATION */}
-                        <FormField
-                            control={form.control}
-                            name="organization_name"
-                            render={({field}) => (
-                                <FormItem>
-                                    {/*<FormLabel className="px-4">{t("labels.organization")}</FormLabel>*/}
-                                    <FormControl>
-                                        <FloatingLabelInput
-                                            {...field}
-                                            type="text"
-                                            name="organization_name"
-                                            label={t("labels.organization")}
-                                            value={field.value}
-                                            onChange={(e) => form.setValue("organization_name", e.target.value)}
                                         />
                                     </FormControl>
                                     <FormMessage/>
