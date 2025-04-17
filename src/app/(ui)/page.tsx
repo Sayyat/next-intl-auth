@@ -1,16 +1,17 @@
-"use client"
-import {useTranslations} from "next-intl";
-import {useEffect} from "react";
-import {useRouter} from "next/navigation";
-import {useProfile} from "@/features/authentication";
+/*
+ * Copyright (c) 2025. Sayat Raykul
+ */
+
+"use client";
+import { useTranslations } from "next-intl";
+import { useProfile } from "@/features/authentication";
 
 export default function Home() {
-    const {data} = useProfile()
-    const t = useTranslations("app.(ui).page");
-    return (
-        <div
-            className=""
-        > {t("welcomeMessage", {username: data?.firstname})}
-        </div>
-    );
+  const { data } = useProfile();
+  const t = useTranslations("app.(ui).page");
+  return (
+    <div className="flex flex-col">
+      <span>{t("welcomeMessage", { username: data?.firstname })}</span>
+    </div>
+  );
 }

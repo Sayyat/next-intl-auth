@@ -1,13 +1,9 @@
 /*
- * Copyright (c) 2025. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
- * Morbi non lorem porttitor neque feugiat blandit. Ut vitae ipsum eget quam lacinia accumsan.
- * Etiam sed turpis ac ipsum condimentum fringilla. Maecenas magna.
- * Proin dapibus sapien vel ante. Aliquam erat volutpat. Pellentesque sagittis ligula eget metus.
- * Vestibulum commodo. Ut rhoncus gravida arcu.
+ * Copyright (c) 2025. Sayat Raykul
  */
 
 import React from "react";
-import { SidebarProvider } from "@/shared/components/ui/sidebar";
+import { SidebarInset, SidebarProvider } from "@/shared/components/ui/sidebar";
 import { AppSidebar } from "@/core/components/AppSidebar";
 import { Header } from "@/core/components/Header";
 import { DynamicBreadcrumb } from "@/core/components/DynamicBreadcrumb";
@@ -18,13 +14,15 @@ export default async function UILayout({
   children: React.ReactNode;
 }>) {
   return (
-    <SidebarProvider>
-      <Header />
+    <SidebarProvider className="h-full">
       <AppSidebar />
-      <main className="flex flex-col w-full h-full p-8 gap-8 overflow-hidden">
+      <div className="bg-sidebar relative flex w-full flex-1 flex-col ">
+        <Header />
         <DynamicBreadcrumb />
-        {children}
-      </main>
+        <SidebarInset className="h-full mb-4 rounded-xl overflow-auto">
+          {children}
+        </SidebarInset>
+      </div>
     </SidebarProvider>
   );
 }
