@@ -1,7 +1,7 @@
 {
-  "name": "Очистные сооружения | Системы водоочистки и фильтрации",
-  "short_name": "Очистные сооружения",
-  "description": "Очистные сооружения | Системы водоочистки и фильтрации",
+  "name": "Next Intl Auth",
+  "short_name": "Next Intl Auth",
+  "description": "Next Intl Auth Boilerplate",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",

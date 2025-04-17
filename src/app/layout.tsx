@@ -24,17 +24,19 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Очистные сооружения",
-    template: `%s - Очистные сооружения`,
+    default: "Next Intl Auth",
+    template: `%s - Next Intl Auth`,
   },
-  metadataBase: new URL("https://web.ziz.kz/"),
-  description: "Очистные сооружения | Системы водоочистки и фильтрации",
+  metadataBase: new URL("https://github.com/Sayyat/next-intl-auth"),
+  description:
+    "A modern boilerplate for building scalable web applications with **Next.js 15**, **TypeScript**, and integrated **i18n** (internationalization). Perfect for developers looking for authentication (Next-Auth), schema validation (Zod), and responsive designs (Tailwind CSS).\n",
   keywords: [
-    "Очистные сооружения",
-    "Водоочистка",
-    "Фильтрация воды",
-    "Экология",
-    "Очистка сточных вод",
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Tailwind CSS",
+    "Next-Auth",
+    "Internationalization",
   ],
   authors: [
     {
@@ -45,27 +47,27 @@ export const metadata: Metadata = {
   creator: "ZIZ INC.",
   openGraph: {
     type: "website",
-    locale: "ru_RU",
-    url: "https://web.ziz.kz/",
-    title: "Очистные сооружения",
-    description: "Современные решения для очистки воды и сточных вод.",
-    siteName: "Очистные сооружения",
+    locale: "en_US",
+    url: "https://next-intl-auth-mu.vercel.app",
+    title: "Your Project Name",
+    description: "A brief description of your project for Open Graph.",
+    siteName: "Next Intl Auth",
     images: [
       {
-        url: "https://web.ziz.kz/og-image.jpg",
+        url: "https://yourprojectdomain.com/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Очистные сооружения - системы водоочистки",
+        alt: "Next Intl Auth",
       },
     ],
   },
-  generator: "Next.js",
+  generator: "Next js",
   icons: {
-    icon: "/icons/favicon.ico",
-    shortcut: "/icons/favicon.ico",
-    apple: "/icons/favicon.png",
+    icon: "/globe.svg",
+    shortcut: "/globe.svg",
+    apple: "/globe.svg",
   },
-  // manifest: "https://web.ziz.kz/site.webmanifest",
+  manifest: "https://next-intl-auth-mu.vercel.app/site.webmanifest",
 };
 
 export default async function RootLayout({
