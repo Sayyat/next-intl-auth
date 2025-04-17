@@ -13,6 +13,7 @@ export interface IProfile {
     address: string,
     is_active: string,
     is_staff: string,
+    is_superuser: string,
     created_at: string,
     updated_at: string,
 }
