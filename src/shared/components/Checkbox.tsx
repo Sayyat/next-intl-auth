@@ -1,5 +1,5 @@
 import React, {ReactNode, RefAttributes} from "react";
-import {cn} from "@/shared/lib/utils";
+import {cn} from "@/shared";
 import {Checkbox as ShadCnCheckbox} from "@/shared/components/ui/checkbox"
 import {CheckboxProps} from "@radix-ui/react-checkbox";
 import {Label} from "@/shared/components/ui/label";
@@ -35,7 +35,7 @@ export const Checkbox: React.FC<CheckboxFieldProps> = ({
         <Label
             htmlFor={name}
             className={cn(
-                "font-medium",
+                "text-md font-medium",
                 labelClassName
             )}
         >

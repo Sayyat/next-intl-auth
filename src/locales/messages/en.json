@@ -32,16 +32,51 @@
       }
     }
   },
+  "core": {
+    "components": {
+      "AppSidebar": {
+        "calculators": "Calculators",
+        "householdGoods": "Household Goods",
+        "ab": "AB",
+        "aamAndAamp": "AAM & AAMP",
+        "kns": "KNS",
+        "sub1": "SUB1",
+        "stormDrain": "Storm drain",
+        "managerInstruments": "Manager Instruments",
+        "displaySettings": "Display Settings",
+        "userCalculations": "User Calculations",
+        "analytics": "Analytics"
+      },
+      "Header": {
+        "authorize": "Authorize",
+        "search": "Search"
+      },
+      "DynamicBreadcrumb": {
+        "home": "Home",
+        "calculators": "Calculators",
+        "householdGoods": "Household Goods",
+        "ab": "AB",
+        "aamAndAamp": "AAM & AAMP",
+        "kns": "KNS",
+        "stormDrain": "Storm Drain",
+        "calculationDetails": "Calculation Details",
+        "managerInstruments": "Manager Instruments",
+        "displaySettings": "Display Settings",
+        "userCalculations": "User Calculations",
+        "analytics": "Analytics"
+      }
+    }
+  },
   "features": {
     "authentication": {
       "components": {
-        "Login": {
+        "LoginDialog": {
           "title": "Limbo",
           "subtitle": "Optimize your personal processes for greater efficiency and player convenience today!",
-          "loginTitle": "Login",
+          "loginTitle": "Authorize",
           "toggleTheme": "Toggle theme",
           "labels": {
-            "email": "Email Address",
+            "email": "E-mail",
             "password": "Password"
           },
           "placeholders": {
@@ -49,7 +84,7 @@
             "password": "Enter your password"
           },
           "buttons": {
-            "submit": "Login",
+            "submit": "Authorize",
             "remember": "Remember"
           },
           "messages": {
@@ -61,34 +96,32 @@
             "unexpectedError": "An unexpected error occurred."
           }
         },
-        "Register": {
+        "RegisterDialog": {
           "title": "Register",
-          "subtitle": "Unlock the full potential of Limbo by creating your account",
           "toggleTheme": "Toggle theme",
           "labels": {
-            "username": "Username",
-            "firstname": "First Name",
-            "lastname": "Last Name",
-            "email": "Email",
-            "age": "Age",
-            "status": "Status",
-            "image": "Profile Image",
+            "firstname": "Firstname",
+            "lastname": "Lastname",
+            "email": "E-mail",
+            "phone": "Phone",
+            "organization": "Organization",
+            "city": "City",
             "password": "Password",
             "confirmPassword": "Confirm Password"
           },
           "placeholders": {
-            "username": "Enter a username",
-            "firstname": "Enter your first name",
-            "lastname": "Enter your last name",
+            "firstname": "Enter a firstname",
+            "lastname": "Enter a lastname",
             "email": "Enter a valid email",
-            "age": "Enter your age",
-            "status": "Select your status",
-            "password": "Enter a password between 8 and 30 characters long",
+            "phone": "Enter your phone",
+            "organization": "Enter your organization name",
+            "city": "Enter your city",
+            "password": "Enter a strong password",
             "confirmPassword": "Confirm your password"
           },
           "buttons": {
             "submit": "Register",
-            "agree": "I agree to the <link>Terms and Conditions</link>"
+            "agree": "I agree to the <link>Processing of personal data</link>"
           },
           "messages": {
             "alreadyRegistered": "Already registered?",
@@ -96,23 +129,15 @@
             "success": "Registration successful!",
             "error": "An error occurred.",
             "unexpectedError": "An unexpected error occurred."
-          },
-          "status": {
-            "school": "School Student",
-            "college": "College Student",
-            "university": "University Student",
-            "employee": "Employed",
-            "search_edu": "Looking for Education",
-            "search_work": "Looking for a Job"
           }
         },
-        "Reset": {
+        "ResetDialog": {
           "title": "Limbo",
           "subtitle": "Optimize your personal processes for greater efficiency and player convenience today!",
           "resetTitle": "Reset password",
           "toggleTheme": "Toggle theme",
           "labels": {
-            "email": "Email Address"
+            "email": "E-mail"
           },
           "placeholders": {
             "email": "Enter your email"
@@ -126,6 +151,498 @@
             "success": "Login successful!",
             "error": "Invalid credentials.",
             "unexpectedError": "An unexpected error occurred."
+          }
+        },
+        "EmailSentDialog": {
+          "head": "Success",
+          "body": "We've sent a password reset link to your email. Check your inbox or spam folder if you can't see the email.",
+          "close": "Close"
+        },
+        "ProfileDialog": {
+          "title": "Profile settings",
+          "profilePicture": "Profile picture",
+          "profilePictureLimit": "PNG, JPEG up to 15 MB",
+          "uploadPhoto": "Upload photo",
+          "labels": {
+            "fullname": "Fullname",
+            "firstname": "Firstname",
+            "lastname": "Lastname",
+            "email": "E-mail",
+            "phone": "Phone",
+            "organization": "Organization",
+            "city": "City"
+          },
+          "placeholders": {
+            "fullname": "Fullname",
+            "firstname": "Firstname",
+            "lastname": "Lastname",
+            "email": "E-mail",
+            "phone": "Phone"
+          },
+          "buttons": {
+            "logout": "Logout",
+            "edit": "Edit",
+            "cancel": "Cancel",
+            "save": "Save"
+          },
+          "messages": {
+            "noChanges": "No changes",
+            "profileUpdated": "Profile updated",
+            "profileUpdateFailed": "Failed to update profile.",
+            "noImageSelected": "No image selected",
+            "imageUpdated": "Image updated",
+            "imageUpdateFailed": "Failed to update image"
+          }
+        }
+      }
+    },
+    "common": {
+      "components": {
+        "CommonFields": {
+          "jobStepSelect": "Select Job Step",
+          "jobStep": "Job Step",
+          "implementation": "Implementation",
+          "designing": "Designing",
+          "objectInformation": "Object Information",
+          "city": "City",
+          "objectName": "Object Name"
+        }
+      },
+      "errors": {
+        "jobStep": {
+          "required": "Job step is required.",
+          "invalid_type": "Invalid type for job step."
+        },
+        "city": {
+          "required": "City is required.",
+          "invalid_type": "Invalid type for city."
+        },
+        "objectName": {
+          "required": "Object name is required.",
+          "invalid_type": "Invalid type for object name."
+        }
+      }
+    },
+    "display-settings": {
+      "components": {
+        "DisplaySettingsComponent": {
+          "displaySettings": "DisplaySettings",
+          "number": "Number",
+          "name": "Name",
+          "householdGoods": "Household goods",
+          "kns": "KNS",
+          "stormDrain": "Storm drain",
+          "calculations": "Calculations"
+        }
+      }
+    },
+    "user-calculations": {
+      "components": {
+        "UserCalculationsComponent": {
+          "userCalculations": "User calculations",
+          "number": "Number",
+          "name": "Name",
+          "organization": "Organization",
+          "city": "City",
+          "object_name": "Object name",
+          "created_at": "Date",
+          "rowsCount": "Rows count",
+          "nRows": "{n} rows",
+          "previous": "Previous",
+          "next": "Next"
+        }
+      }
+    },
+    "household-goods": {
+      "components": {
+        "HouseholdGoodsCalculatorComponent": {
+          "householdGoodsCalculator": "Household Goods Calculator",
+          "aamAndAamp": "AAM & AAMP",
+          "aamAndAampCalculator": "AAM & AAMP calculator",
+          "aamAndAampCalculatorContent": "Make calculations for AAM & AAMP",
+          "ab": "AB",
+          "abCalculator": "AB calculator",
+          "abCalculatorContent": "Make calculations for AB",
+          "go": "Go"
+        },
+        "AamAndAampCalculatorComponent": {
+          "calculatorHouseholdGoods": "Household Goods Calculator",
+          "jobStepSelect": "Select Job Step",
+          "jobStep": "Job Step",
+          "objectInformation": "Object Information",
+          "city": "City",
+          "objectName": "Object Name",
+          "aamAndAamp": "AAM & AAMP",
+          "dealData": "Deal Data",
+          "dealNumber": "Deal Number",
+          "initialData": "Initial Data",
+          "wastewaterConsumption": "Wastewater Consumption",
+          "totalVolumeOfVolleys": "Total Volume of Volleys",
+          "volleyCount": "Volleys count",
+          "volleyDischargePerTime": "Volley Discharge Per Time Interval",
+          "timeBetweenVolleys": "Time Between Volleys",
+          "feederDepth": "Feeder Depth",
+          "disinfection": "Disinfection",
+          "dehydration": "Dehydration",
+          "AB": "AB",
+          "volley": "Volley",
+          "recommendedEquipments": "Recommended equipments",
+          "number": "No",
+          "equipmentType": "Equipment type",
+          "model": "Model",
+          "quantity": "Quantity",
+          "unitPrice": "Unit price",
+          "price": "Price",
+          "neckSpecification": "Neck Specification",
+          "cleaningStation": "Cleaning Station",
+          "necks": "Necks",
+          "disinfectionUnit": "Disinfection Unit",
+          "bufferCapacity": "Buffer Capacity",
+          "dehydrationUnit": "Dehydration Unit",
+          "mechanicalCleaningUnit": "Mechanical Cleaning Unit",
+          "notRequired": "Not required",
+          "notesTitle": "Notes",
+          "notesBody": "The exact number and length of the throat will be determined after the approval of the placement of our equipment on Gen.Plane. The cost of the buffer tank is indicated as an example (exact calculation after specifying the arrangement of the equipment on the General Plan and the selection of pumps. The costs for mechanical cleaning and dewatering blocks are also indicated as an example, the exact calculation is after approval of the stated sample cost.",
+          "bufferFillingSchedule": "Buffer filling schedule",
+          "total": "Total",
+          "calculateAamAndAamp": "Calculate AAM & AAMP",
+          "calculateAb": "Calculate AB",
+          "showCalculationResults": "Show calculation results",
+          "downloadHouseholdCalculation": "Download household calculation",
+          "submitApplication": "Submit application",
+          "screwDehydrator": "Screw dehydrator",
+          "grateOrAuger": "Grate or auger",
+          "": ""
+        },
+        "AbCalculatorComponent": {
+          "calculatorHouseholdGoods": "Household Goods Calculator",
+          "jobStepSelect": "Select Job Step",
+          "jobStep": "Job Step",
+          "objectInformation": "Object Information",
+          "city": "City",
+          "objectName": "Object Name",
+          "aamAndAamp": "AAM & AAMP",
+          "dealData": "Deal Data",
+          "dealNumber": "Deal Number",
+          "initialData": "Initial Data",
+          "wastewaterConsumption": "Wastewater Consumption",
+          "totalVolumeOfVolleys": "Total Volume of Volleys",
+          "volleyCount": "Volleys count",
+          "volleyDischargePerTime": "Volley Discharge Per Time Interval",
+          "timeBetweenVolleys": "Time Between Volleys",
+          "feederDepth": "Feeder Depth",
+          "disinfection": "Disinfection",
+          "dehydration": "Dehydration",
+          "AB": "AB",
+          "volley": "Volley",
+          "recommendedEquipments": "Recommended equipments",
+          "number": "No",
+          "equipmentType": "Equipment type",
+          "model": "Model",
+          "quantity": "Quantity",
+          "unitPrice": "Unit price",
+          "price": "Price",
+          "neckSpecification": "Neck Specification",
+          "cleaningStation": "Cleaning Station",
+          "necks": "Necks",
+          "disinfectionUnit": "Disinfection Unit",
+          "bufferCapacity": "Buffer Capacity",
+          "dehydrationUnit": "Dehydration Unit",
+          "mechanicalCleaningUnit": "Mechanical Cleaning Unit",
+          "notRequired": "Not required",
+          "notesTitle": "Notes",
+          "notesBody": "The exact number and length of the throat will be determined after the approval of the placement of our equipment on Gen.Plane. The cost of the buffer tank is indicated as an example (exact calculation after specifying the arrangement of the equipment on the General Plan and the selection of pumps. The costs for mechanical cleaning and dewatering blocks are also indicated as an example, the exact calculation is after approval of the stated sample cost.",
+          "bufferFillingSchedule": "Buffer filling schedule",
+          "total": "Total",
+          "calculateAamAndAamp": "Calculate AAM & AAMP",
+          "calculateAb": "Calculate AB",
+          "showCalculationResults": "Show calculation results",
+          "downloadHouseholdCalculation": "Download household calculation",
+          "submitApplication": "Submit application",
+          "screwDehydrator": "Screw dehydrator",
+          "grateOrAuger": "Grate or auger",
+          "": ""
+        }
+      }
+    },
+    "kns": {
+      "components": {
+        "KnsComponent": {
+          "calculatorHouseholdGoods": "Household Goods Calculator",
+          "jobStepSelect": "Select Job Step",
+          "jobStep": "Job Step",
+          "implementation": "Implementation",
+          "designing": "Designing",
+          "objectInformation": "Object Information",
+          "city": "City",
+          "objectName": "Object Name",
+          "aamAndAamp": "AAM & AAMP",
+          "dealData": "Deal Data and KNS",
+          "dealNumber": "Deal Number",
+          "knsNumber": "KNS Number",
+          "initialData": "Initial Data",
+          "flowRate": "Flow Rate (m³/h)",
+          "pressure": "Pressure (m)",
+          "supplyManifold": "Supply Manifold",
+          "diameter": "Diameter",
+          "depth": "Depth",
+          "quantity": "Quantity",
+          "pressureManifold": "Pressure Manifold",
+          "height": "Height",
+          "pump": "Pump",
+          "pumpHeight": "Pump Height",
+          "pumpDiameter": "Pump Diameter",
+          "pumpLength": "Pump Length",
+          "pumpWidth": "Pump Width",
+          "working": "Working",
+          "reserve": "Reserve",
+          "startsPerHour": "Starts Per Hour",
+          "totalStarts": "Total Starts",
+          "nominalPower": "Nominal Power (kW)",
+          "nominalAmperage": "Nominal Amperage (A)",
+          "pressurePipeDiameter": "Pressure Pipe Diameter (mm)",
+          "pipeGuideDiameter": "Pipe Guide Diameter (inches)",
+          "pumpWeight": "Pump Weight (kg)",
+          "dimensionsCalculation": "Dimension Calculation",
+          "recommendedDiameter": "Recommended Diameter",
+          "recommendedHeight": "Recommended Height",
+          "dimensionsByCustomer": "Dimensions Calculation by Customer Requirements",
+          "requiredDiameter": "Required Diameter",
+          "allowableHeight": "Allowable Height",
+          "acceptedDimensions": "Accepted KNS Dimensions",
+          "additionalEquipments": "Additional Equipment",
+          "additionalEquipment": "Additional Equipment No.{index}",
+          "add": "Add",
+          "remove": "Remove",
+          "knsEquipmentCalculation": "KNS Equipment Calculation",
+          "number": "No.",
+          "name": "Name",
+          "specification": "Specification",
+          "price": "Price (₸)",
+          "totalCost": "Total Cost (₸)",
+          "sensors": "Sensors",
+          "floatLevelRegulator": "Float Level Regulator IGD 10S",
+          "pumpATM": "Pump + ATM",
+          "additionalGateValves": "Additional Gate Valves",
+          "additionalCheckValves": "Additional Check Valves",
+          "chain": "Chain (m)",
+          "workingLoad": "Working Load - 80 kg",
+          "pipeNode": "Pipe Node (m)",
+          "basket": "Basket",
+          "inletPipe": "Inlet Pipe",
+          "pressurePipe": "Pressure Pipe",
+          "ladder": "Ladder",
+          "manometer": "Manometer",
+          "guidePipes": "Guide Pipes (m)",
+          "controlCabinet": "Control Cabinet (kW; A)",
+          "knsBuilding": "KNS Building",
+          "controlCabinetPodium": "Podium for Control Cabinet",
+          "neck": "Neck",
+          "cover": "Cover",
+          "open": "Open",
+          "diameterInches": "11.4 inches",
+          "total": "Total",
+          "calculate": "Calculate",
+          "resetForm": "Reset form",
+          "showCalculationResults": "Show Calculation Results",
+          "downloadKnsCalculation": "Download KNS Calculation",
+          "submitApplication": "Submit Application",
+          "": ""
+        }
+      },
+      "hooks": {
+        "useKnsCalculations": {
+          "success": "✅ KNS calculations completed successfully!",
+          "error": "❌ Error in KNS calculations",
+          "missing": {
+            "pumpPressurePipeDiameter": "Сорғы үшін қысым құбырының диаметрі таңдалмаған",
+            "pumpPipeGuideDiameter": "сорғы бағыттаушы құбырдың диаметрі таңдалмаған",
+            "acceptedDimensionsHeight": "Қабылданған өлшемдер үшін биіктік таңдалмаған",
+            "acceptedDimensionsDiameter": "Қабылданған өлшемдер үшін диаметр таңдалмаған",
+            "pressureCollectorDiameter": "Қысым коллекторы үшін сандық мән таңдалмаған",
+            "pressureCollectorAmount": "Қысым жинағыш үшін сома таңдалмаған",
+            "supplyManifoldDiameter": "Қамтамасыз ету коллекторының диаметрі таңдалмаған"
+          }
+        }
+      },
+      "errors": {
+        "deal": {
+          "dealNumber": {
+            "required": "Deal number is required.",
+            "invalid_type": "Invalid type for deal number."
+          },
+          "knsNumber": {
+            "required": "KNS number is required.",
+            "invalid_type": "Invalid type for KNS number."
+          }
+        },
+        "initialData": {
+          "flowRate": {
+            "nonnegative": "Flow rate must be non-negative.",
+            "required": "Flow rate is required.",
+            "invalid_type": "Invalid type for flow rate."
+          },
+          "pressure": {
+            "nonnegative": "Pressure must be non-negative.",
+            "required": "Pressure is required.",
+            "invalid_type": "Invalid type for pressure."
+          },
+          "price": {
+            "nonnegative": "Price must be non-negative.",
+            "required": "Price is required.",
+            "invalid_type": "Invalid type for price."
+          },
+          "controlCabinet": {
+            "required": "Control cabinet is required.",
+            "invalid_type": "Invalid type for control cabinet."
+          }
+        },
+        "supplyManifold": {
+          "diameter": {
+            "required": "Supply manifold diameter is required.",
+            "invalid_type": "Invalid type for supply manifold diameter."
+          },
+          "depth": {
+            "nonnegative": "Supply manifold depth must be non-negative.",
+            "required": "Supply manifold depth is required.",
+            "invalid_type": "Invalid type for supply manifold depth."
+          },
+          "amount": {
+            "nonnegative": "Supply manifold amount must be non-negative.",
+            "required": "Supply manifold amount is required.",
+            "invalid_type": "Invalid type for supply manifold amount."
+          }
+        },
+        "pressureCollector": {
+          "diameter": {
+            "required": "Pressure collector diameter is required.",
+            "invalid_type": "Invalid type for pressure collector diameter."
+          },
+          "amount": {
+            "required": "Pressure collector amount is required.",
+            "nonnegative": "Pressure collector amount must be non-negative.",
+            "invalid_type": "Invalid type for pressure collector amount."
+          },
+          "depth": {
+            "nonnegative": "Pressure collector depth must be non-negative.",
+            "required": "Pressure collector depth is required.",
+            "invalid_type": "Invalid type for pressure collector depth."
+          }
+        },
+        "pump": {
+          "working": {
+            "nonnegative": "Number of working pumps must be non-negative.",
+            "required": "Number of working pumps is required.",
+            "invalid_type": "Invalid type for number of working pumps."
+          },
+          "reserve": {
+            "nonnegative": "Number of reserve pumps must be non-negative.",
+            "required": "Number of reserve pumps is required.",
+            "invalid_type": "Invalid type for number of reserve pumps."
+          },
+          "pressurePipeDiameter": {
+            "required": "Pressure pipe diameter is required.",
+            "invalid_type": "Invalid type for pressure pipe diameter."
+          },
+          "pipeGuideDiameter": {
+            "required": "Pipe guide diameter is required.",
+            "invalid_type": "Invalid type for pipe guide diameter."
+          },
+          "height": {
+            "nonnegative": "Pump height must be non-negative.",
+            "required": "Pump height is required.",
+            "invalid_type": "Invalid type for pump height."
+          },
+          "diameter": {
+            "nonnegative": "Pump diameter must be non-negative.",
+            "required": "Pump diameter is required.",
+            "invalid_type": "Invalid type for pump diameter."
+          },
+          "length": {
+            "nonnegative": "Pump length must be non-negative.",
+            "required": "Pump length is required.",
+            "invalid_type": "Invalid type for pump length."
+          },
+          "width": {
+            "nonnegative": "Pump width must be non-negative.",
+            "required": "Pump width is required.",
+            "invalid_type": "Invalid type for pump width."
+          },
+          "startsPerHour": {
+            "nonnegative": "Number of pump starts per hour must be non-negative.",
+            "required": "Number of pump starts per hour is required.",
+            "invalid_type": "Invalid type for number of pump starts per hour."
+          },
+          "totalStarts": {
+            "nonnegative": "Total pump starts must be non-negative.",
+            "required": "Total pump starts are required.",
+            "invalid_type": "Invalid type for total pump starts."
+          },
+          "power": {
+            "nonnegative": "Pump power must be non-negative.",
+            "required": "Pump power is required.",
+            "invalid_type": "Invalid type for pump power."
+          },
+          "amperage": {
+            "nonnegative": "Pump amperage must be non-negative.",
+            "required": "Pump amperage is required.",
+            "invalid_type": "Invalid type for pump amperage."
+          },
+          "weight": {
+            "nonnegative": "Pump weight must be non-negative.",
+            "required": "Pump weight is required.",
+            "invalid_type": "Invalid type for pump weight."
+          }
+        },
+        "dimensionCalculations": {
+          "recommendedDiameter": {
+            "required": "Recommended diameter is required.",
+            "invalid_type": "Invalid type for recommended diameter.",
+            "nonnegative": "Recommended diameter cannot be less than 0."
+          },
+          "recommendedHeight": {
+            "required": "Recommended height is required.",
+            "invalid_type": "Invalid type for recommended height.",
+            "nonnegative": "Recommended height cannot be less than 0."
+          }
+        },
+        "accordingCustomerRequirementsDimensionCalculations": {
+          "requiredDiameter": {
+            "required": "Required diameter according to customer requirements is required.",
+            "invalid_type": "Invalid type for required diameter according to customer requirements.",
+            "nonnegative": "Required diameter according to customer requirements cannot be less than 0."
+          },
+          "allowableHeight": {
+            "required": "Allowable height according to customer requirements is required.",
+            "invalid_type": "Invalid type for allowable height according to customer requirements.",
+            "nonnegative": "Allowable height according to customer requirements cannot be less than 0."
+          }
+        },
+        "acceptedDimensions": {
+          "height": {
+            "required": "Accepted dimension height is required.",
+            "invalid_type": "Invalid type for accepted dimension height."
+          },
+          "diameter": {
+            "required": "Accepted dimension diameter is required.",
+            "invalid_type": "Invalid type for accepted dimension diameter."
+          }
+        },
+        "additionalEquipment": {
+          "power": {
+            "nonnegative": "Additional equipment power must be non-negative.",
+            "required": "Additional equipment power is required.",
+            "invalid_type": "Invalid type for additional equipment power."
+          },
+          "amperage": {
+            "nonnegative": "Additional equipment amperage must be non-negative.",
+            "required": "Additional equipment amperage is required.",
+            "invalid_type": "Invalid type for additional equipment amperage."
+          },
+          "amount": {
+            "nonnegative": "Additional equipment amount must be non-negative.",
+            "required": "Additional equipment amount is required.",
+            "invalid_type": "Invalid type for additional equipment amount."
           }
         }
       }
@@ -151,24 +668,24 @@
     "unknownError": "Unknown error",
     "errors": {
       "firstname": {
-        "min": "First name is required."
+        "min": "Firstname is required."
       },
       "lastname": {
-        "min": "Last name is required."
+        "min": ":Lastname is required."
       },
       "email": {
         "invalid": "Invalid email format."
       },
-      "age": {
-        "typeError": "Age must be a number.",
-        "min": "Age cannot be negative.",
-        "max": "Age must be no more than 70 years."
+      "phone": {
+        "invalid": "Invalid phone number.",
+        "min": "Phone number must be at least 11 digits long.",
+        "max": "Phone number must be no more than 15 digits long."
       },
-      "status": {
-        "required": "You must select a status."
+      "organization": {
+        "required": "Organization is required."
       },
-      "image": {
-        "required": "Image is required."
+      "city": {
+        "required": "City is required."
       },
       "password": {
         "min": "Password must be at least {min} characters long.",
@@ -181,11 +698,32 @@
     "INVALID_DATA": "Invalid input data",
     "EMAIL_EXISTS": "Email already exists",
     "WRONG_PASSWORD": "Incorrect password",
-    "ALL_STEPS_COMPLETED": "All steps have already been completed for this scenario",
-    "INVALID_HOME_UNIQUE_CODE": "Invalid home unique_code. You must scan another home first",
+    "ALL_STEPS_COMPLETED": "All steps already completed for this scenario",
+    "INVALID_HOME_UNIQUE_CODE": "Invalid home unique code. Please scan a different home first",
     "TOKEN_EXPIRED": "Token expired",
-    "UNAUTHORIZED": "Password or email not valid",
-    "SCENARIO_NOT_FOUND": "Scenario for user not found",
+    "UNAUTHORIZED": "Incorrect password or email",
+    "ADMIN_NOT_FOUND": "Administrator not found",
+    "USER_PHONE_NUMBER_ALREADY_EXISTS": "Phone number already exists",
+    "INTERNAL_SERVER_ERROR": "Server error. Please send a message to the developer via Telegram",
+    "BLOCK_CONFIG_NOT_FOUND": "Block configuration not found",
+    "ALTA_BIO_CLEAN_NOT_FOUND": "Alta Bio Clean not found",
+    "ALTA_PRODUCT_NOT_FOUND": "Alta product not found",
+    "CITY_NOT_FOUND": "City not found",
+    "PUMP_PRESSURE_PIPE_DIAMETER_NOT_FOUND": "Pump pressure pipe diameter not found",
+    "PUMP_PRESSURE_PIPE_COUNT_NOT_FOUND": "Pump pressure pipe count not found",
+    "ACCEPTED_DIMENSIONS_HEIGHT_NOT_FOUND": "Accepted dimensions height not found",
+    "SUPPLY_MANIFOLD_DIAMETER_NOT_FOUND": "Supply manifold diameter not found",
+    "INLET_PIPE_NOT_FOUND": "Inlet pipe not found",
+    "PRESSURE_COLLECTOR_DIAMETER_NOT_FOUND": "Pressure collector diameter not found",
+    "PRESSURE_COLLECTOR_COUNT_NOT_FOUND": "Pressure collector count not found",
+    "OUTLET_PIPE_COUNT_NOT_FOUND": "Outlet pipe count not found",
+    "ACCESSORIES_MATERIAL_NOT_FOUND": "Accessories material not found",
+    "PIPE_GUIDES_NOT_FOUND": "Pipe guides not found",
+    "CONTROL_CABINET_NOT_FOUND": "Control cabinet not found",
+    "ACCEPTED_DIMENSIONS_DIAMETER_NOT_FOUND": "Accepted dimensions diameter not found",
+    "PRESSURE_GAUGE_NOT_FOUND": "Manometer not found",
+    "USER_EMAIL_ALREADY_EXISTS": "User with this email already exists",
+    "TOKEN_NOT_VALID": "Invalid refresh token",
     "unknownError": "Unknown error",
     "serverError": "Server error"
   }

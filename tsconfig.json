@@ -1,50 +1,67 @@
 {
   "compilerOptions": {
-    // Usually es2017 or esnext for Next.js (es5 is quite old, but up to you)
+    // Good choice for Next.js, especially if you’re using latest features
     "target": "ESNext",
+    // Next.js often uses these libs for DOM, iteration, and newer features
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
-    // Existing configs
+    // Good for allowing .js in TypeScript if needed
     "allowJs": true,
+    // Skips checking .d.ts files in node_modules (improves build speed)
     "skipLibCheck": true,
+    // Strict mode is recommended
     "strict": true,
+    // Next.js typically doesn't emit from TS, so "noEmit": true is correct
     "noEmit": true,
+    // Interop needed for certain ES modules
     "esModuleInterop": true,
+    // The module used by Next.js is ESNext or NodeNext (both can work)
     "module": "esnext",
+    // Next.js can handle modern bundling, so "moduleResolution": "bundler" is fine
     "moduleResolution": "bundler",
+    // Allows importing JSON files
     "resolveJsonModule": true,
+    // Good for partial compilation isolation
     "isolatedModules": true,
+    // Usually "preserve" or "react-jsx" in Next.js
     "jsx": "preserve",
+    // Speeds up subsequent builds
     "incremental": true,
-    // Add "next-auth" to types array so it merges your custom next-auth.d.ts
+    // Ensures next-auth custom declarations are merged
     "types": [
       "@testing-library/jest-dom",
       "next-auth"
     ],
+    // Next.js plugin for better IntelliSense
     "plugins": [
       {
         "name": "next"
       }
     ],
+    // Path aliases for simpler imports
     "paths": {
       "@/*": [
         "./src/*"
       ]
     }
   },
-  // Ensure your custom types folder is included
   "include": [
     "**/*.ts",
     "**/*.tsx",
     "next-env.d.ts",
-    "src/**/*.d.ts",
+    "src/**/*.d.ts"
+    // If you need type checking in .next, uncomment if necessary
+    ,
     ".next/types/**/*.ts"
   ],
-  // Exclude node_modules as usual
   "exclude": [
-    "node_modules"
+    "dist",
+    "build",
+    ".next",
+    "node_modules",
+    "**/*.test.ts"
   ]
 }

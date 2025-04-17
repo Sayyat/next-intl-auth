@@ -1,8 +1,6 @@
-[![Live Demo](https://img.shields.io/badge/demo-online-green)](https://next-intl-auth-mu.vercel.app/)
+# Treatment Facilities
 
-# Next.js 15 Boilerplate with Next-Auth, TypeScript, and Internationalization
-
-A modern boilerplate for building scalable web applications with **Next.js 15**, **TypeScript**, and integrated **i18n** (internationalization). Perfect for developers looking for authentication (Next-Auth), schema validation (Zod), and responsive designs (Tailwind CSS).
+Front-end for treatment facilities
 
 ---
 
@@ -280,13 +278,6 @@ yarn test:e2e --ui
 yarn test  # Runs all unit and integration tests
 yarn test:e2e  # Runs all E2E tests
 ```
-
----
-
-
-## Contributing
-
-Contributions are welcome! Please fork the repository and submit a pull request.
 
 ---
 

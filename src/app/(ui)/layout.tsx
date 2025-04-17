@@ -1,28 +1,22 @@
 import React from "react";
-import {Header} from "@/app/(ui)/_components/Header";
-import {Footer} from "@/app/(ui)/_components/Footer";
+import {SidebarProvider} from "@/shared/components/ui/sidebar";
+import {AppSidebar} from "@/core/components/AppSidebar";
+import {Header} from "@/core/components/Header";
+import {DynamicBreadcrumb} from "@/core/components/DynamicBreadcrumb";
 
-export default async function RootLayout({
+export default async function UILayout({
     children,
 }: Readonly<{
     children: React.ReactNode;
 }>) {
     return (
-        <div className="flex flex-col h-dvh bg-primaryBackgroundColor">
-            {/* Header */}
-            <div className="min-h-16 max-h-32 shrink-0">
+        <SidebarProvider>
+            <AppSidebar/>
+            <main className="flex flex-col w-full h-full p-8 gap-8 overflow-hidden">
                 <Header/>
-            </div>
-
-            {/* Main Content */}
-            <div className="flex-1 overflow-auto">
+                <DynamicBreadcrumb/>
                 {children}
-            </div>
-
-            {/* Footer */}
-            <div className="h-16 border-t shrink-0">
-                <Footer/>
-            </div>
-        </div>
+            </main>
+        </SidebarProvider>
     );
 }

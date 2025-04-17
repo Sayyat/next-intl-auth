@@ -1,14 +1,20 @@
 "use client"
-import {useSession} from "next-auth/react";
 import {useTranslations} from "next-intl";
+import {useEffect} from "react";
+import {useRouter} from "next/navigation";
+import {useProfile} from "@/features/authentication";
 
 export default function Home() {
-    const {status, data} = useSession()
+    const {data} = useProfile()
     const t = useTranslations("app.(ui).page");
+    const router = useRouter()
+    useEffect(() => {
+        router.push("/calculators/household-goods")
+    }, []);
     return (
         <div
-            className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center p-8 pb-20 gap-16 sm:p-20"
-        > {t("welcomeMessage", {username: data?.user.firstname})}
+            className=""
+        > {t("welcomeMessage", {username: data?.firstname})}
         </div>
     );
 }

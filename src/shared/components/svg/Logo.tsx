@@ -1,5 +1,5 @@
 import React, {SVGAttributes} from "react";
-import {cn} from "@/shared/lib/utils";
+import {cn} from "@/shared";
 
 interface LogoProps extends SVGAttributes<SVGSVGElement> {
     className?: string; // Optional additional class for styling

@@ -1,28 +1,37 @@
 "use client"
 
 import * as React from "react"
-import { Moon, Sun } from "lucide-react"
-import { useTheme } from "next-themes"
-
-import { Button } from "@/shared/components/ui/button"
+import {Laptop, Moon, Sun} from "lucide-react"
+import {useTheme} from "next-themes"
+import {Button} from "@/shared/components/ui/button"
 import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuTrigger,
 } from "@/shared/components/ui/dropdown-menu"
-import {useTranslations} from "next-intl";
+import {useTranslations} from "next-intl"
 
 export function ThemeSelect() {
-    const { setTheme } = useTheme()
+    const {setTheme, theme} = useTheme() // Получаем текущую тему и системную тему
     const t = useTranslations("shared.components.ThemeToggle")
 
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
-                <Button variant="outline" size="icon" className="relative bg-primary rounded-r-xl">
-                    <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-                    <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                <Button variant="outline" size="icon" className="relative bg-background rounded-r-xl">
+                    {theme === "light" && (
+                        <Sun
+                            className="size-[1.2rem] rotate-0 scale-100"/>
+                    )}
+                    {theme === "dark" && (
+                        <Moon
+                            className="size-[1.2rem] rotate-0 scale-100"/>
+                    )}
+                    {theme === "system" && (
+                        <Laptop
+                            className="size-[1.2rem] scale-100"/>
+                    )}
                     <span className="sr-only">Toggle theme</span>
                 </Button>
             </DropdownMenuTrigger>

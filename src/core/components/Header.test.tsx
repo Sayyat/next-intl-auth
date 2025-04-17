@@ -3,7 +3,6 @@ import userEvent from "@testing-library/user-event";
 import {describe, it, expect, vi, beforeEach, afterEach} from "vitest";
 import {Header} from "./Header";
 import {useSession} from "next-auth/react";
-import {useTheme} from "@/shared/hooks/useTheme";
 import {NextIntlClientProvider} from "next-intl";
 import {JSX} from "react";
 
@@ -56,11 +55,6 @@ describe("Header Component", () => {
     const mockToggleTheme = vi.fn();
 
     beforeEach(() => {
-        // Mock useTheme
-        (useTheme as any).mockReturnValue({
-            theme: "light",
-            toggleTheme: mockToggleTheme,
-        });
 
         // Mock useSession
         (useSession as any).mockReturnValue({
@@ -124,7 +118,7 @@ describe("Header Component", () => {
     });
 
     it("toggles the theme when the theme button is clicked", async () => {
-        renderWithIntl(<Header />, getLocaleMessages());
+        renderWithIntl(<Header/>, getLocaleMessages());
 
         const user = userEvent.setup();
 

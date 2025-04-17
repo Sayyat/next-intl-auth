@@ -1,24 +1,53 @@
-import {IResponse} from "@/types/api";
+import {IPaginatedResponse, IResponse} from "@/shared";
 import {getUserLocale} from "@/locales/config/server";
-import {handleResponse} from "@/services/api";
-import {apiClient} from "@/services/client";
+import {createApiService} from "@/shared/services/api";
+import {apiClient} from "@/shared/services/client";
+import {IProfile} from "@/features/authentication/types/profile";
+import {ICity} from "@/features/common";
+import {IResetPayload, IResetResponse} from "@/features/authentication/types/payload";
 
-export interface IResetPayload {
-    email: string;
-}
+const api = createApiService(apiClient);
 
-export interface IResetResponse {
-    message: string;
-}
-
+/**
+ * Reset Password
+ */
 export const resetPassword = async (
     payload: IResetPayload
 ): Promise<IResponse<IResetResponse>> => {
-    const language = await getUserLocale()
-    return await handleResponse<IResetResponse>(
-        apiClient.post("/api/password-reset/", {
-            email: payload.email,
-            language,
-        })
-    );
+    const language = await getUserLocale();
+    return api.postWithHandle<IResetResponse>("/api/password-reset/", {
+        email: payload.email,
+        language,
+    });
+};
+
+/**
+ * Get Cities list
+ */
+export const getCities = (): Promise<IResponse<IPaginatedResponse<ICity>>> =>
+    api.getWithHandle<IPaginatedResponse<ICity>>("/api/cities/");
+
+/**
+ * Get User Profile
+ */
+export const getProfile = (): Promise<IResponse<IProfile>> =>
+    api.getWithHandle<IProfile>("/api/user/profile/");
+
+/**
+ * Update Profile (without Image)
+ */
+export const updateProfile = (
+    data: Partial<IProfile>
+): Promise<IResponse<IProfile>> =>
+    api.patchWithHandle<IProfile>("/api/user/profile/", data);
+
+/**
+ * Update Profile Image
+ */
+export const updateProfileImage = (
+    imageFile: File
+): Promise<IResponse<IProfile>> => {
+    const formData = new FormData();
+    formData.append("file", imageFile);
+    return api.postFormWithHandle<IProfile>("/api/user/profile/photo/", formData);
 };

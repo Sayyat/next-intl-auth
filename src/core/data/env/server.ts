@@ -5,7 +5,7 @@ export const env = createEnv({
     emptyStringAsUndefined: true,
     server: {
         API_URL: z.string(),
-        NEXTAUTH_SECRET: z.string(),
+        AUTH_SECRET: z.string(),
     },
     experimental__runtimeEnv: process.env,
 });

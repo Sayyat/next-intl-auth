@@ -28,7 +28,7 @@ export const Input: React.FC<InputFieldProps> = ({
             className={cn(
                 "font-medium w-full text-[16px]",
                 labelClassName,
-                !props.disabled ? "text-primaryColor" : "text-secondaryColor"
+                !props.disabled ? "text-primary" : "text-secondary"
             )}
         >
             {label}
@@ -36,15 +36,20 @@ export const Input: React.FC<InputFieldProps> = ({
         <div className="flex items-center w-full gap-2">
             <ShadCnInput
                 className={cn(
+                    "border border-gray-300 text-gray-700 rounded-md px-3 py-2 w-full shadow-xs",
+                    "focus-visible:ring-blue-600 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-offset-blue-100 ",
+                    "focus:ring-blue-600 focus:outline-hidden focus:ring-2 focus:ring-offset-1 focus:ring-offset-blue-100 ",
+                    "hover:ring-blue-600 hover:outline-hidden hover:ring-2 focus:ring-offset-1 hover:ring-offset-blue-100 ",
+                    "active:border-blue-600 transition-colors duration-150 ease-in-out",
                     className,
-                    !props.disabled ? "text-primaryColor" : "text-secondaryColor",
+                    !props.disabled ? "text-primary" : "text-secondary",
                     props.type === "file" && "file:border-0 file:bg-primary file:text-primary-foreground file:py-2 file:px-4 file:rounded-md"
                 )}
                 {...props}
             />
             {postfix}
         </div>
-        <div className={!props.disabled ? "text-primaryColor" : "text-secondaryColor"}>
+        <div className={!props.disabled ? "text-primary" : "text-secondary"}>
             {hint}
         </div>
     </div>

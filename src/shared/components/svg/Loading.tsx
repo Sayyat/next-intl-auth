@@ -1,5 +1,5 @@
 import React, {SVGAttributes} from "react";
-import {cn} from "@/shared/lib/utils";
+import {cn} from "@/shared";
 
 interface LoadingProps extends SVGAttributes<SVGSVGElement> {
     className?: string; // Optional additional class for styling
@@ -14,7 +14,7 @@ export const Loading: React.FC<LoadingProps> = ({
             aria-hidden="true"
             className={
                 cn(
-                    "inline w-4 h-4 text-gray-200 animate-spin dark:text-gray-600 fill-accentBackgroundColor",
+                    "inline w-4 h-4 text-blue-200 animate-spin dark:text-blue-600 fill-accent-foreground",
                     className
                 )
             }

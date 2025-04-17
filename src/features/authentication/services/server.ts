@@ -1,42 +1,32 @@
-// For completeness, here's the login function if needed:
-import {IResponse} from "@/types/api";
-import {IUser} from "@/types/global";
-import {apiClient} from "@/services/server";
-import {handleResponse} from "@/services/api";
+import {IUser, IResponse} from "@/shared";
+import {apiClient} from "@/shared/services/server";
+import {createApiService} from "@/shared/services/api";
+import {IRegisterPayload, ILoginPayload} from "@/features/authentication/types/payload";
+import {IToken} from "@/features/authentication/types/response";
 
 
-export interface IRegisterPayload {
-    email: string;
-    password: string;
-}
+const api = createApiService(apiClient);
 
-// Register a new user with multipart/form-data
-export const registerUser = async (
+/**
+ * Register new user
+ */
+export const registerUser = (
     payload: IRegisterPayload
-): Promise<IResponse<IUser>> => {
-    return await handleResponse<IUser>(
-        apiClient.post("/api/auth/register", payload)
-    );
-};
+): Promise<IResponse<IUser>> =>
+    api.postWithHandle<IUser>("/api/auth/register/", payload);
 
-
-export interface ILoginPayload {
-    email: string;
-    password: string;
-}
-
-export const loginUser = async (
+/**
+ * Login user
+ */
+export const loginUser = (
     payload: ILoginPayload
-): Promise<IResponse<IUser>> => {
-    return await handleResponse<IUser>(
-        apiClient.post("/api/auth/login", payload)
-    );
-};
+): Promise<IResponse<IUser>> =>
+    api.postWithHandle<IUser>("/api/auth/login/", payload);
 
-
-export const refreshToken = async (refresh: string) => {
-    console.log({in: "refreshToken", refresh})
-    return await handleResponse<{ access: string }>(
-        apiClient.post("/api/auth/refresh", {refresh})
-    );
-};
+/**
+ * Refresh access token
+ */
+export const refreshToken = (
+    refresh: string
+): Promise<IResponse<IToken>> =>
+    api.postWithHandle<IToken>("/api/auth/token/refresh/", {refresh});

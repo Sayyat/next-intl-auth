@@ -1,14 +1,10 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import {ThemeProvider as NextThemesProvider} from "next-themes"
+import * as React from "react";
+import {ThemeProvider as NextThemesProvider, useTheme} from "next-themes";
 import {useEffect, useState} from "react";
 
-export function ThemeProvider({
-    children
-}: Readonly<{
-    children: React.ReactNode;
-}>) {
+export function ThemeProvider({children}: { children: React.ReactNode }) {
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
@@ -16,7 +12,7 @@ export function ThemeProvider({
     }, []);
 
     if (!mounted) {
-        return <div style={{ visibility: "hidden" }} />;
+        return <div style={{visibility: "hidden"}}/>;
     }
 
     return (
@@ -25,7 +21,11 @@ export function ThemeProvider({
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange
-        >{children}
+            enableColorScheme
+            themes={["dark", "light"]}
+        >
+            {children}
         </NextThemesProvider>
-    )
+    );
 }
+

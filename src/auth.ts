@@ -4,7 +4,7 @@ import {getTranslator} from "@/locales/config/translation"
 import {createLoginSchema, createRegisterSchema} from "@/features/authentication/lib/zod"
 import {registerUser, loginUser, refreshToken} from "@/features/authentication/services/server"
 import {jwtDecode} from "jwt-decode"
-import {IUser} from "@/types/global";
+import {IUser} from "@/shared";
 
 class InvalidLoginError extends CredentialsSignin {
     constructor(message: string) {
@@ -28,11 +28,12 @@ export const {handlers, signIn, signOut, auth} = NextAuth({
             id: "register",
             name: "Register",
             credentials: {
+                email: {},
                 firstname: {},
                 lastname: {},
-                email: {},
-                age: {},
-                status: {},
+                phone_number: {},
+                organization_name: {},
+                city_id: {},
                 password: {},
             },
             async authorize(credentials) {
@@ -96,7 +97,7 @@ export const {handlers, signIn, signOut, auth} = NextAuth({
                 token.access = access
                 token.refresh = refresh
             }
-
+            // console.log({in: "jwt", token})
             // Check for expiration if we have token.access
             if (token.access) {
                 try {
@@ -131,7 +132,7 @@ export const {handlers, signIn, signOut, auth} = NextAuth({
     },
 
     pages: {
-        signIn: "/login",
-        error: "/login?error=true",
+        signIn: "/",
+        error: "/",
     },
 })
