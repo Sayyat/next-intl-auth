@@ -48,12 +48,12 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://next-intl-auth-mu.vercel.app",
-    title: "Your Project Name",
-    description: "A brief description of your project for Open Graph.",
+    title: "Next Intl Auth",
+    description: "Next Intl Auth Boilerplate",
     siteName: "Next Intl Auth",
     images: [
       {
-        url: "https://yourprojectdomain.com/og-image.jpg",
+        url: "https://next-intl-auth-mu.vercel.app/assets/logo.png",
         width: 1200,
         height: 630,
         alt: "Next Intl Auth",
@@ -62,11 +62,11 @@ export const metadata: Metadata = {
   },
   generator: "Next js",
   icons: {
-    icon: "/globe.svg",
-    shortcut: "/globe.svg",
-    apple: "/globe.svg",
+    icon: "/assets/logo",
+    shortcut: "/assets/logo",
+    apple: "/assets/logo",
   },
-  manifest: "https://next-intl-auth-mu.vercel.app/site.webmanifest",
+  manifest: "https://next-intl-auth-mu.vercel.app/icons/site.webmanifest",
 };
 
 export default async function RootLayout({
