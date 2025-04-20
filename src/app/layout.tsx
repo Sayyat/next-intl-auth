@@ -7,9 +7,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "@/core/styles/globals.css";
 import { NextIntlClientProvider } from "next-intl";
 import { ToastContainer } from "react-toastify";
-import React from "react";
 import { getLocale } from "next-intl/server";
 import { ClientProvidersWrapper } from "@/core/providers/ClientProvidersWrapper";
+import { ReactNode } from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
 export default async function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   const locale = await getLocale();
   return (
