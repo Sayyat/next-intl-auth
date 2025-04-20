@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2025. Sayat Raykul
+ */
+
 import { getRequestConfig } from "next-intl/server";
 
 import { defaultLocale } from "./locales";
@@ -17,7 +21,8 @@ export default getRequestConfig(async () => {
     );
     return {
       locale: defaultLocale,
-      messages: (await import(`@/locales/messages/${defaultLocale}.json`)).default,
+      messages: (await import(`@/locales/messages/${defaultLocale}.json`))
+        .default,
     };
   }
 });

@@ -1,13 +1,16 @@
+/*
+ * Copyright (c) 2025. Sayat Raykul
+ */
+
 "use server";
-import {cookies} from "next/headers";
-import {defaultLocale, Locale} from "./locales";
+import { cookies } from "next/headers";
+import { defaultLocale, Locale } from "./locales";
 
 const COOKIE_NAME = "NEXT_LOCALE";
 
 export async function getUserLocale(): Promise<Locale> {
-    return (await cookies()).get(COOKIE_NAME)?.value as Locale || defaultLocale;
+  return ((await cookies()).get(COOKIE_NAME)?.value as Locale) || defaultLocale;
 }
-
 export async function setUserLocale(locale: Locale) {
-    (await cookies()).set(COOKIE_NAME, locale);
+  (await cookies()).set(COOKIE_NAME, locale);
 }

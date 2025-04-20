@@ -6,11 +6,10 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "@/core/styles/globals.css";
 import { NextIntlClientProvider } from "next-intl";
-import { defaultLocale } from "@/locales/config/locales";
 import { ToastContainer } from "react-toastify";
 import React from "react";
-import { getMessages } from "next-intl/server";
-import { AllProviders } from "@/core/providers/AllProviders";
+import { getLocale } from "next-intl/server";
+import { ClientProvidersWrapper } from "@/core/providers/ClientProvidersWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -75,20 +74,21 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const messages = await getMessages();
+  const locale = await getLocale();
   return (
-    <html lang={defaultLocale} className="overflow-hidden">
+    <html lang={locale}>
       <head>
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no"
         />
+        <title>Next Intl Auth</title>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <NextIntlClientProvider messages={messages}>
-          <AllProviders>
+        <NextIntlClientProvider>
+          <ClientProvidersWrapper>
             {children}
             <ToastContainer
               limit={3}
@@ -96,7 +96,7 @@ export default async function RootLayout({
                 "font-bold bg-accent text-accent-foreground flex items-center p-4 z-1002"
               }
             />
-          </AllProviders>
+          </ClientProvidersWrapper>
         </NextIntlClientProvider>
       </body>
     </html>

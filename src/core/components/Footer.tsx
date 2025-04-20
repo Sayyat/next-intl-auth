@@ -1,12 +1,16 @@
-import {useTranslations} from "next-intl";
+/*
+ * Copyright (c) 2025. Sayat Raykul
+ */
+
+import { useTranslations } from "next-intl";
 
 export function Footer() {
-    const t = useTranslations("app.(ui)._components.Footer");
+  const t = useTranslations("app.(ui)._components.Footer");
 
-    return (
-        <div className="flex items-center justify-center gap-2 h-full border-t">
-            <span>{t("createdBy")}</span>
-            <span>{new Date().getFullYear()}</span>
-        </div>
-    )
+  return (
+    <div className="flex items-center justify-center gap-2 h-8">
+      <span>{t("createdBy")}</span>
+      <span>{new Date().getFullYear()}</span>
+    </div>
+  );
 }

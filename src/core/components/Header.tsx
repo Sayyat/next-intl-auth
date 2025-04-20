@@ -35,9 +35,9 @@ export function Header() {
   return (
     <header className="bg-sidebar flex items-center justify-between gap-4">
       {/* Title */}
-      <SidebarTrigger />
-      <div className="gap-4 h-14 w-full grid grid-cols-[56px_1fr_72px_1fr] items-center">
-        <ProfileImageIcon className="size-14" />
+      <div className="gap-4 h-14 w-full grid grid-cols-[36px_36px_1fr_72px_1fr] items-center">
+        <SidebarTrigger size="lg" className="size-9 bg-background" />
+        <ProfileImageIcon className="size-9" />
         <div className="flex flex-col items-start justify-between">
           {status === "loading" && <Skeleton className="w-full" />}
           {status === "unauthenticated" && (
@@ -60,12 +60,13 @@ export function Header() {
           )}
         </div>
 
-        {/* 🔍 Search Bar - Fixed Input */}
         <div className="">
           <LanguageSelect />
           <ThemeSelect />
         </div>
-        <div className="flex items-center px-4 gap-2 border border-muted rounded-xl h-full bg-background focus-within:ring-2 focus-within:ring-ring">
+
+        {/* 🔍 Search Bar - Fixed Input */}
+        <div className="flex items-center px-4 gap-2 border border-muted rounded-xl h-9 bg-background focus-within:ring-2 focus-within:ring-ring">
           <Search className="text-muted-foreground" />
           <input
             type="text"
