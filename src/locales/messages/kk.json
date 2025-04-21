@@ -1,69 +1,32 @@
 {
   "app": {
     "(ui)": {
-      "_components": {
-        "Header": {
-          "title": "Next Intl Auth Үлгісі",
-          "toggleTheme": "Тақырыпты ауыстыру",
-          "unknownUser": "Белгісіз қолданушы",
-          "signOut": "Шығу",
-          "user": "Қолданушы",
-          "openMenu": "Мәзір",
-          "closeMenu": "Жабу"
-        },
-        "Footer": {
-          "version": "Нұсқа: 1.0.0",
-          "termsOfService": "Қызмет көрсету шарттары",
-          "privacyPolicy": "Құпиялылық саясаты",
-          "createdBy": "ZIZ INC. компаниясында ❤\uFE0F - пен  жасаған"
-        }
-      },
       "page": {
         "title": "Басты бет",
-        "welcomeMessage": "Қош келдіңіз, {username}!",
-        "customerData": "Тұтынушы",
-        "poolType": "Бассейн типі",
-        "poolProperties": "Бассейн қасиеттері",
-        "poolFields": "Бассейн параметрлері",
-        "pumpSelection": "Сорғыны таңдау",
-        "previous": "Алдыңғы",
-        "next": "Келесі",
-        "submit": "Жіберу"
+        "welcomeMessage": "Қош келдіңіз, {username}!"
       }
     }
   },
   "core": {
     "components": {
-      "AppSidebar": {
-        "calculators": "Калькуляторлар",
-        "householdGoods": "Тұрмыстық тауарлар",
-        "ab": "AB",
-        "aamAndAamp": "AAM & AAMP",
-        "kns": "КНС",
-        "sub1": "SUB1",
-        "stormDrain": "Дауыл дренажы",
-        "managerInstruments": "Менеджер құралдары",
-        "displaySettings": "Дисплей параметрлері",
-        "userCalculations": "Пайдаланушы есептеулері",
-        "analytics": "Аналитика"
-      },
       "Header": {
         "authorize": "Кіру",
         "search": "Іздеу"
       },
-      "DynamicBreadcrumb": {
-        "home": "Басты",
-        "calculators": "Калькуляторлар",
-        "householdGoods": "Тұрмыстық тауарлар",
-        "ab": "AB",
-        "aamAndAamp": "AAM & AAMP",
-        "kns": "КНС",
-        "stormDrain": "Дауыл дренажы",
-        "calculationDetails": "Есептеу мәліметтері",
-        "managerInstruments": "Менеджер құралдары",
-        "displaySettings": "Дисплей параметрлері",
-        "userCalculations": "Пайдаланушы есептеулері",
-        "analytics": "Аналитика"
+      "Footer": {
+        "createdBy": "ZIZ INC-те ❤\uFE0F-пен жасалған"
+      }
+    },
+    "config": {
+      "routes": {
+        "group_1": "Топ 1",
+        "home": "Басты бет",
+        "dashboard": "Дашборд",
+        "analytics": "Аналитика",
+        "group_2": "Топ 2",
+        "about": "Біз жайлы",
+        "profile": "Профиль",
+        "settings": "Баптаулар"
       }
     }
   },
@@ -129,14 +92,6 @@
             "success": "Тіркелу сәтті аяқталды!",
             "error": "Қате пайда болды.",
             "unexpectedError": "Күтпеген қате орын алды."
-          },
-          "status": {
-            "school": "Мектеп оқушысы",
-            "college": "Колледж студенті",
-            "university": "Университет студенті",
-            "employee": "Жұмыс істейтін",
-            "search_edu": "Білім іздеуде",
-            "search_work": "Жұмыс іздеуде"
           }
         },
         "ResetDialog": {
@@ -175,7 +130,7 @@
             "fullname": "Толық аты-жөніңіз",
             "firstname": "Аты",
             "lastname": "Тегі",
-            "contacts": "Байланыс деректері",
+            "contacts": "Байланыс",
             "email": "E-mail",
             "phone": "Телефон нөмірі",
             "organization": "Organization",
@@ -204,457 +159,6 @@
           }
         }
       }
-    },
-    "common": {
-      "components": {
-        "CommonFields": {
-          "jobStepSelect": "Жұмыс кезеңін таңдау",
-          "jobStep": "Жұмыс кезеңі",
-          "implementation": "Іске асыру",
-          "designing": "Жобалау",
-          "objectInformation": "Объект туралы ақпарат",
-          "city": "Қала",
-          "objectName": "Объект атауы"
-        }
-      },
-      "errors": {
-        "jobStep": {
-          "required": "Жұмыс кезеңі міндетті.",
-          "invalid_type": "Жұмыс кезеңі үшін дұрыс емес тип."
-        },
-        "city": {
-          "required": "Қала міндетті.",
-          "invalid_type": "Қала үшін дұрыс емес тип."
-        },
-        "objectName": {
-          "required": "Объект атауы міндетті.",
-          "invalid_type": "Объект атауы үшін дұрыс емес тип."
-        }
-      }
-    },
-    "display-settings": {
-      "components": {
-        "DisplaySettingsComponent": {
-          "displaySettings": "Дисплей параметрлері",
-          "number": "Нөмір",
-          "name": "Аты",
-          "householdGoods": "Тұрмыстық тауарлар",
-          "kns": "КНС",
-          "stormDrain": "Дауыл дренажы",
-          "calculations": "Есептеулер"
-        }
-      }
-    },
-    "user-calculations": {
-      "components": {
-        "UserCalculationsComponent": {
-          "userCalculations": "Пайдаланушы есептеулері",
-          "number": "Нөмір",
-          "name": "Аты",
-          "organization": "Организация",
-          "city": "Қала",
-          "object_name": "Объект аты",
-          "created_at": "Дата",
-          "rowsCount": "Жолдар саны",
-          "nRows": "{n} жол",
-          "previous": "Алдыңғы",
-          "next": "Келесі"
-        }
-      }
-    },
-    "household-goods": {
-      "components": {
-        "HouseholdGoodsCalculatorComponent": {
-          "householdGoodsCalculator": "Тұрмыстық тауарлар калькуляторы",
-          "aamAndAamp": "AAM & AAMP",
-          "aamAndAampCalculator": "AAM & AAMP калькулятор",
-          "aamAndAampCalculatorContent": "AAM & AAMP үшін есептуулер жүргізіңіз",
-          "ab": "AB",
-          "abCalculator": "AB калькулятор",
-          "abCalculatorContent": "AB үшін есептуулер жүргізіңіз",
-          "go": "Өту"
-        },
-        "AamAndAampCalculatorComponent": {
-          "calculatorHouseholdGoods": "Тұрмыстық тауарлар калькуляторы",
-          "jobStepSelect": "Жұмыс қадамын таңдау",
-          "jobStep": "Жұмыс қадамы",
-          "objectInformation": "Нысан туралы ақпарат",
-          "city": "Қала",
-          "objectName": "Нысан атауы",
-          "aamAndAamp": "AAM & AAMP",
-          "dealData": "Келісім деректері",
-          "dealNumber": "Келісім нөмірі",
-          "initialData": "Бастапқы деректер",
-          "wastewaterConsumption": "Ағынды суды тұтыну",
-          "totalVolumeOfVolleys": "Залптық ағызудың жалпы көлемі",
-          "volleyCount": "Залптар саны",
-          "volleyDischargePerTime": "Белгілі бір уақыттағы залптық ағызу мөлшері",
-          "timeBetweenVolleys": "Залптар арасындағы уақыт",
-          "feederDepth": "Бергіштің тереңдігі",
-          "disinfection": "Дезинфекция",
-          "dehydration": "Сусыздандыру",
-          "AB": "AB",
-          "volley": "Залп",
-          "recommendedEquipments": "Ұсынылатын жабдықтар",
-          "number": "№",
-          "equipmentType": "Жабдық түрі",
-          "model": "үлгі",
-          "quantity": "Quantity",
-          "unitPrice": "Бірлік бағасы",
-          "price": "Баға",
-          "neckSpecification": "Мойын сипаттамасы",
-          "cleaningStation": "Тазалау станциясы",
-          "necks": "Мойындар",
-          "disinfectionUnit": "Дезинфекциялау блогы",
-          "bufferCapacity": "Буфер сыйымдылығы",
-          "dehydrationUnit": "Сусыздандыру блогы",
-          "mechanicalCleaningUnit": "Механикалық тазалау блогы",
-          "notRequired": "Міндетті емес",
-          "notesTitle": "Ескертпелер",
-          "notesBody": "Точное кол-во и длинна горловин уточняется после утверждения расстановки нашего оборудования на Ген.Плане. Стоимость буферной ёмкости указана примерной (точный расчёт после уточнения расстановки оборудования на Ген.Плане және подбора насосов. Стоимости для блоков мех.очистки және обезвоживания указаны сияқты үлгі, точный расчёт после.",
-          "bufferFillingSchedule": "Буферді толтыру кестесі",
-          "total": "Барлығы",
-          "calculateAamAndAamp": "AAM & AAMP есептеу",
-          "calculateAb": "AB септеу",
-          "showCalculationResults": "Есептеу нәтижелерін көрсету",
-          "downloadHouseholdCalculation": "Үй шаруашылығының есебін жүктеп алу",
-          "submitApplication": "Өтінім жіберу",
-          "screwDehydrator": "Бұрандалы дегидратор",
-          "grateOrAuger": "Тор немесе шнек",
-          "": ""
-        },
-        "AbCalculatorComponent": {
-          "calculatorHouseholdGoods": "Тұрмыстық тауарлар калькуляторы",
-          "jobStepSelect": "Жұмыс қадамын таңдау",
-          "jobStep": "Жұмыс қадамы",
-          "objectInformation": "Нысан туралы ақпарат",
-          "city": "Қала",
-          "objectName": "Нысан атауы",
-          "aamAndAamp": "AAM & AAMP",
-          "dealData": "Келісім деректері",
-          "dealNumber": "Келісім нөмірі",
-          "initialData": "Бастапқы деректер",
-          "wastewaterConsumption": "Ағынды суды тұтыну",
-          "totalVolumeOfVolleys": "Залптық ағызудың жалпы көлемі",
-          "volleyCount": "Залптар саны",
-          "volleyDischargePerTime": "Белгілі бір уақыттағы залптық ағызу мөлшері",
-          "timeBetweenVolleys": "Залптар арасындағы уақыт",
-          "feederDepth": "Бергіштің тереңдігі",
-          "disinfection": "Дезинфекция",
-          "dehydration": "Сусыздандыру",
-          "AB": "AB",
-          "volley": "Залп",
-          "recommendedEquipments": "Ұсынылатын жабдықтар",
-          "number": "№",
-          "equipmentType": "Жабдық түрі",
-          "model": "үлгі",
-          "quantity": "Quantity",
-          "unitPrice": "Бірлік бағасы",
-          "price": "Баға",
-          "neckSpecification": "Мойын сипаттамасы",
-          "cleaningStation": "Тазалау станциясы",
-          "necks": "Мойындар",
-          "disinfectionUnit": "Дезинфекциялау блогы",
-          "bufferCapacity": "Буфер сыйымдылығы",
-          "dehydrationUnit": "Сусыздандыру блогы",
-          "mechanicalCleaningUnit": "Механикалық тазалау блогы",
-          "notRequired": "Міндетті емес",
-          "notesTitle": "Ескертпелер",
-          "notesBody": "Точное кол-во и длинна горловин уточняется после утверждения расстановки нашего оборудования на Ген.Плане. Стоимость буферной ёмкости указана примерной (точный расчёт после уточнения расстановки оборудования на Ген.Плане және подбора насосов. Стоимости для блоков мех.очистки және обезвоживания указаны сияқты үлгі, точный расчёт после.",
-          "bufferFillingSchedule": "Буферді толтыру кестесі",
-          "total": "Барлығы",
-          "calculateAamAndAamp": "AAM & AAMP есептеу",
-          "calculateAb": "AB септеу",
-          "showCalculationResults": "Есептеу нәтижелерін көрсету",
-          "downloadHouseholdCalculation": "Үй шаруашылығының есебін жүктеп алу",
-          "submitApplication": "Өтінім жіберу",
-          "screwDehydrator": "Бұрандалы дегидратор",
-          "grateOrAuger": "Тор немесе шнек",
-          "": ""
-        }
-      }
-    },
-    "kns": {
-      "components": {
-        "KnsComponent": {
-          "calculatorHouseholdGoods": "Тұрмыстық тауар калькуляторы",
-          "jobStepSelect": "Жұмыс кезеңін таңдау",
-          "jobStep": "Жұмыс кезеңі",
-          "implementation": "Іске асыру",
-          "designing": "Жобалау",
-          "objectInformation": "Объект туралы ақпарат",
-          "city": "Қала",
-          "objectName": "Объект атауы",
-          "aamAndAamp": "AAM & AAMP",
-          "dealData": "Келісім және КНС деректері",
-          "dealNumber": "Келісім нөмірі",
-          "knsNumber": "КНС нөмірі",
-          "initialData": "Бастапқы деректер",
-          "flowRate": "Ағын жылдамдығы (м³/сағ)",
-          "pressure": "Басымдылық (м)",
-          "supplyManifold": "Жеткізу коллекторы",
-          "diameter": "Диаметр",
-          "depth": "Тереңдік",
-          "quantity": "Саны",
-          "pressureManifold": "Қысым коллекторы",
-          "height": "Биіктік",
-          "pump": "Насос",
-          "pumpHeight": "Насостың биіктігі",
-          "pumpDiameter": "Насостың диаметрі",
-          "pumpLength": "Насостың ұзындығы",
-          "pumpWidth": "Насостың ені",
-          "working": "Жұмыс",
-          "reserve": "Резерв",
-          "startsPerHour": "Сағатына іске қосу саны",
-          "totalStarts": "Жалпы іске қосу саны",
-          "nominalPower": "Номиналды қуат (кВт)",
-          "nominalAmperage": "Номиналды ток (A)",
-          "pressurePipeDiameter": "Қысым құбырының диаметрі (мм)",
-          "pipeGuideDiameter": "Құбыр бағыттағыштарының диаметрі (дюйм)",
-          "pumpWeight": "Насостың салмағы (кг)",
-          "dimensionsCalculation": "Өлшемдерді есептеу",
-          "recommendedDiameter": "Ұсынылған диаметр",
-          "recommendedHeight": "Ұсынылған биіктік",
-          "dimensionsByCustomer": "Тапсырыс берушінің талаптары бойынша өлшемдерді есептеу",
-          "requiredDiameter": "Қажетті диаметр",
-          "allowableHeight": "Рұқсат етілген биіктік",
-          "acceptedDimensions": "Қабылданған КНС өлшемдері",
-          "additionalEquipments": "Қосымша жабдықалар",
-          "additionalEquipment": "Қосымша жабдықалар №{index}",
-          "add": "Қосу",
-          "remove": "Жою",
-          "knsEquipmentCalculation": "КНС жабдықаларын есептеу",
-          "number": "№",
-          "name": "Атауы",
-          "specification": "Спецификация",
-          "price": "Баға (₸)",
-          "totalCost": "Жалпы құны (₸)",
-          "sensors": "Датчиктер",
-          "floatLevelRegulator": "Плавучий деңгей реттегіші IGD 10S",
-          "pumpATM": "Насос + ATM",
-          "additionalGateValves": "Қосымша задвижкалар",
-          "additionalCheckValves": "Қосымша кері клапандар",
-          "chain": "Тізбе (м)",
-          "workingLoad": "Жұмыс жүктемесі - 80 кг",
-          "pipeNode": "Құбыр түйіні (м)",
-          "basket": "Себет",
-          "inletPipe": "Кіріс патрубогы",
-          "pressurePipe": "Қысым патрубогы",
-          "ladder": "Маска",
-          "manometer": "Манометр",
-          "guidePipes": "Бағыттаушы құбырлар (м)",
-          "controlCabinet": "Басқару шкафы (кВт; A)",
-          "knsBuilding": "КНС корпусы",
-          "controlCabinetPodium": "Басқару шкафына арналған подиум",
-          "neck": "Мойын",
-          "cover": "Қақпақ",
-          "open": "Ашық",
-          "diameterInches": "11.4 дюйм",
-          "total": "Жалпы",
-          "calculate": "Есептеу",
-          "resetForm": "Форманы тазалау",
-          "showCalculationResults": "Есеп нәтижелерін көрсету",
-          "downloadKnsCalculation": "КНС есептеуін жүктеу",
-          "submitApplication": "Өтінімді жіберу",
-          "": ""
-        }
-      },
-      "hooks": {
-        "useKnsCalculations": {
-          "success": "✅ KNS есептеулері сәтті аяқталды!",
-          "error": "❌ KNS есептеулерінде қателік орын алды",
-          "missing": {
-            "pumpPressurePipeDiameter": "Не выбран диаметр напорного патрубка для насоса",
-            "pumpPipeGuideDiameter": "Не выбран диаметр трубных направляющих для насоса",
-            "acceptedDimensionsHeight": "Не выбрана высота для принятых габаритов",
-            "acceptedDimensionsDiameter": "Не выбран диаметр для принятых габаритов",
-            "pressureCollectorDiameter": "Не выбран показатель количества для напорного коллектора",
-            "pressureCollectorAmount": "Не выбран показатель количества для напорного коллектора",
-            "supplyManifoldDiameter": "Не выбран диаметр подводящего коллектора"
-          }
-        }
-      },
-      "errors": {
-        "deal": {
-          "dealNumber": {
-            "required": "Сделка нөмірі міндетті.",
-            "invalid_type": "Сделка нөмірі үшін дұрыс емес тип."
-          },
-          "knsNumber": {
-            "required": "KNS нөмірі міндетті.",
-            "invalid_type": "KNS нөмірі үшін дұрыс емес тип."
-          }
-        },
-        "initialData": {
-          "flowRate": {
-            "nonnegative": "Ағымдық шығын теріс емес болуы керек.",
-            "required": "Ағымдық шығын міндетті.",
-            "invalid_type": "Ағымдық шығын үшін дұрыс емес тип."
-          },
-          "pressure": {
-            "nonnegative": "Қысым теріс емес болуы керек.",
-            "required": "Қысым міндетті.",
-            "invalid_type": "Қысым үшін дұрыс емес тип."
-          },
-          "price": {
-            "nonnegative": "Баға теріс емес болуы керек.",
-            "required": "Баға міндетті.",
-            "invalid_type": "Баға үшін дұрыс емес тип."
-          },
-          "controlCabinet": {
-            "required": "Бақылау шкафтары міндетті.",
-            "invalid_type": "Бақылау шкафы үшін дұрыс емес тип."
-          }
-        },
-        "supplyManifold": {
-          "diameter": {
-            "required": "Қосымша диаметрі міндетті.",
-            "invalid_type": "Қосымша диаметрі үшін дұрыс емес тип."
-          },
-          "depth": {
-            "nonnegative": "Қосымша тереңдігі теріс емес болуы керек.",
-            "required": "Қосымша тереңдік міндетті.",
-            "invalid_type": "Қосымша тереңдік үшін дұрыс емес тип."
-          },
-          "amount": {
-            "nonnegative": "Қосымша мөлшері теріс емес болуы керек.",
-            "required": "Қосымша мөлшер міндетті.",
-            "invalid_type": "Қосымша мөлшері үшін дұрыс емес тип."
-          }
-        },
-        "pressureCollector": {
-          "diameter": {
-            "required": "Қысым жинаушының диаметрі міндетті.",
-            "invalid_type": "Қысым жинаушы диаметрі үшін дұрыс емес тип."
-          },
-          "amount": {
-            "required": "Қысым жинаушының мөлшері міндетті.",
-            "nonnegative": "Қысым жинаушының мөлшері теріс емес болуы керек.",
-            "invalid_type": "Қысым жинаушының мөлшері үшін дұрыс емес тип."
-          },
-          "depth": {
-            "nonnegative": "Қысым жинаушының тереңдігі теріс емес болуы керек.",
-            "required": "Қысым жинаушының тереңдігі міндетті.",
-            "invalid_type": "Қысым жинаушының тереңдігі үшін дұрыс емес тип."
-          }
-        },
-        "pump": {
-          "working": {
-            "nonnegative": "Жұмыс істейтін сорғылардың саны теріс емес болуы керек.",
-            "required": "Жұмыс істейтін сорғылардың саны міндетті.",
-            "invalid_type": "Жұмыс істейтін сорғылардың саны үшін дұрыс емес тип."
-          },
-          "reserve": {
-            "nonnegative": "Резервтегі сорғылардың саны теріс емес болуы керек.",
-            "required": "Резервтегі сорғылардың саны міндетті.",
-            "invalid_type": "Резервтегі сорғылардың саны үшін дұрыс емес тип."
-          },
-          "pressurePipeDiameter": {
-            "required": "Қысым патрубогының диаметрі міндетті.",
-            "invalid_type": "Қысым патрубогының диаметрі үшін дұрыс емес тип."
-          },
-          "pipeGuideDiameter": {
-            "required": "Трубаның бағыттауыш диаметрі міндетті.",
-            "invalid_type": "Трубаның бағыттауыш диаметрі үшін дұрыс емес тип."
-          },
-          "height": {
-            "nonnegative": "Сорғының биіктігі теріс емес болуы керек.",
-            "required": "Сорғының биіктігі міндетті.",
-            "invalid_type": "Сорғының биіктігі үшін дұрыс емес тип."
-          },
-          "diameter": {
-            "nonnegative": "Сорғының диаметрі теріс емес болуы керек.",
-            "required": "Сорғының диаметрі міндетті.",
-            "invalid_type": "Сорғының диаметрі үшін дұрыс емес тип."
-          },
-          "length": {
-            "nonnegative": "Сорғының ұзындығы теріс емес болуы керек.",
-            "required": "Сорғының ұзындығы міндетті.",
-            "invalid_type": "Сорғының ұзындығы үшін дұрыс емес тип."
-          },
-          "width": {
-            "nonnegative": "Сорғының ені теріс емес болуы керек.",
-            "required": "Сорғының ені міндетті.",
-            "invalid_type": "Сорғының ені үшін дұрыс емес тип."
-          },
-          "startsPerHour": {
-            "nonnegative": "Сорғының сағаттық пускі теріс емес болуы керек.",
-            "required": "Сорғының сағаттық пускі міндетті.",
-            "invalid_type": "Сорғының сағаттық пускі үшін дұрыс емес тип."
-          },
-          "totalStarts": {
-            "nonnegative": "Жалпы пускілердің саны теріс емес болуы керек.",
-            "required": "Жалпы пускілердің саны міндетті.",
-            "invalid_type": "Жалпы пускілердің саны үшін дұрыс емес тип."
-          },
-          "power": {
-            "nonnegative": "Сорғының қуаты теріс емес болуы керек.",
-            "required": "Сорғының қуаты міндетті.",
-            "invalid_type": "Сорғының қуаты үшін дұрыс емес тип."
-          },
-          "amperage": {
-            "nonnegative": "Сорғының ток күші теріс емес болуы керек.",
-            "required": "Сорғының ток күші міндетті.",
-            "invalid_type": "Сорғының ток күші үшін дұрыс емес тип."
-          },
-          "weight": {
-            "nonnegative": "Сорғының салмағы теріс емес болуы керек.",
-            "required": "Сорғының салмағы міндетті.",
-            "invalid_type": "Сорғының салмағы үшін дұрыс емес тип."
-          }
-        },
-        "dimensionCalculations": {
-          "recommendedDiameter": {
-            "required": "Ұсынылған диаметр міндетті.",
-            "invalid_type": "Ұсынылған диаметр үшін қате тип.",
-            "nonnegative": "Ұсынылған диаметр 0-ден кіші болмауы керек."
-          },
-          "recommendedHeight": {
-            "required": "Ұсынылған биіктік міндетті.",
-            "invalid_type": "Ұсынылған биіктік үшін қате тип.",
-            "nonnegative": "Ұсынылған биіктік 0-ден кіші болмауы керек."
-          }
-        },
-        "accordingCustomerRequirementsDimensionCalculations": {
-          "requiredDiameter": {
-            "required": "Тапсырыс берушінің талаптарына сәйкес міндетті диаметр міндетті.",
-            "invalid_type": "Тапсырыс берушінің талаптарына сәйкес міндетті диаметр үшін қате тип.",
-            "nonnegative": "Тапсырыс берушінің талаптарына сәйкес міндетті диаметр 0-ден кіші болмауы керек."
-          },
-          "allowableHeight": {
-            "required": "Тапсырыс берушінің талаптарына сәйкес рұқсат етілген биіктік міндетті.",
-            "invalid_type": "Тапсырыс берушінің талаптарына сәйкес рұқсат етілген биіктік үшін қате тип.",
-            "nonnegative": "Тапсырыс берушінің талаптарына сәйкес рұқсат етілген биіктік 0-ден кіші болмауы керек."
-          }
-        },
-        "acceptedDimensions": {
-          "height": {
-            "required": "Қабылданған өлшемдердің биіктігі міндетті.",
-            "invalid_type": "Қабылданған өлшемдердің биіктігі үшін дұрыс емес тип."
-          },
-          "diameter": {
-            "required": "Қабылданған өлшемдердің диаметрі міндетті.",
-            "invalid_type": "Қабылданған өлшемдердің диаметрі үшін дұрыс емес тип."
-          }
-        },
-        "additionalEquipment": {
-          "power": {
-            "nonnegative": "Қосымша жабдықтың қуаты теріс емес болуы керек.",
-            "required": "Қосымша жабдықтың қуаты міндетті.",
-            "invalid_type": "Қосымша жабдықтың қуаты үшін дұрыс емес тип."
-          },
-          "amperage": {
-            "nonnegative": "Қосымша жабдықтың ток күші теріс емес болуы керек.",
-            "required": "Қосымша жабдықтың ток күші міндетті.",
-            "invalid_type": "Қосымша жабдықтың ток күші үшін дұрыс емес тип."
-          },
-          "amount": {
-            "nonnegative": "Қосымша жабдықтың саны теріс емес болуы керек.",
-            "required": "Қосымша жабдықтың саны міндетті.",
-            "invalid_type": "Қосымша жабдықтың саны үшін дұрыс емес тип."
-          }
-        }
-      }
     }
   },
   "shared": {
@@ -666,10 +170,44 @@
         "kk": "Қазақша"
       },
       "ThemeToggle": {
+        "label": "Тақырыпты ауыстыру",
         "light": "Жарық",
         "dark": "Қараңғы",
         "system": "Жүйелік"
       }
+    },
+    "services": {
+      "INVALID_DATA": "Жарамсыз кіріс деректері",
+      "EMAIL_EXISTS": "Электрондық пошта бұрыннан бар",
+      "WRONG_PASSWORD": "Қате құпия сөз",
+      "ALL_STEPS_COMPLETED": "Осы сценарий үшін барлық қадамдар орындалды",
+      "INVALID_HOME_UNIQUE_CODE": "Үйдің бірегей коды қате. Алдымен басқа үйді сканерлеңіз",
+      "TOKEN_EXPIRED": "Токеннің мерзімі аяқталды",
+      "UNAUTHORIZED": "Қате құпия сөз немесе электрондық пошта",
+      "ADMIN_NOT_FOUND": "Әкімші табылмады",
+      "USER_PHONE_NUMBER_ALREADY_EXISTS": "Телефон нөмірі бұрыннан бар",
+      "INTERNAL_SERVER_ERROR": "Сервер қатесі. Бізге Telegram арқылы хабарласыңыз",
+      "BLOCK_CONFIG_NOT_FOUND": "Блоктың конфигурациясы табылмады",
+      "ALTA_BIO_CLEAN_NOT_FOUND": "Alta Bio Clean табылмады",
+      "ALTA_PRODUCT_NOT_FOUND": "Alta өнімі табылмады",
+      "CITY_NOT_FOUND": "Қала табылмады",
+      "PUMP_PRESSURE_PIPE_DIAMETER_NOT_FOUND": "Насостың қысым құбырының диаметрі табылмады",
+      "PUMP_PRESSURE_PIPE_COUNT_NOT_FOUND": "Насостың құбыр саны табылмады",
+      "ACCEPTED_DIMENSIONS_HEIGHT_NOT_FOUND": "Қабылданған өлшемдердің биіктігі табылмады",
+      "SUPPLY_MANIFOLD_DIAMETER_NOT_FOUND": "Жеткізу коллекторының диаметрі табылмады",
+      "INLET_PIPE_NOT_FOUND": "Кіріс құбыры табылмады",
+      "PRESSURE_COLLECTOR_DIAMETER_NOT_FOUND": "Қысым жинақтаушының диаметрі табылмады",
+      "PRESSURE_COLLECTOR_COUNT_NOT_FOUND": "Қысым жинақтаушының саны табылмады",
+      "OUTLET_PIPE_COUNT_NOT_FOUND": "Шығыс құбыр саны табылмады",
+      "ACCESSORIES_MATERIAL_NOT_FOUND": "Аксессуарлар материалы табылмады",
+      "PIPE_GUIDES_NOT_FOUND": "Құбыр бағыттағыштары табылмады",
+      "CONTROL_CABINET_NOT_FOUND": "Басқару корпусы табылмады",
+      "ACCEPTED_DIMENSIONS_DIAMETER_NOT_FOUND": "Қабылданған өлшемдердің диаметрі табылмады",
+      "PRESSURE_GAUGE_NOT_FOUND": "Монометр табылмады",
+      "USER_EMAIL_ALREADY_EXISTS": "Осы электрондық пошта қолданыста",
+      "TOKEN_NOT_VALID": "Жарамсыз refresh токен",
+      "unknownError": "Белгісіз қате",
+      "serverError": "Сервер қатесі"
     }
   },
   "auth": {
@@ -702,38 +240,5 @@
         "mismatch": "Құпиясөз және оның растауы сәйкес келмейді!"
       }
     }
-  },
-  "services": {
-    "INVALID_DATA": "Жарамсыз кіріс деректері",
-    "EMAIL_EXISTS": "Электрондық пошта бұрыннан бар",
-    "WRONG_PASSWORD": "Қате құпия сөз",
-    "ALL_STEPS_COMPLETED": "Осы сценарий үшін барлық қадамдар орындалды",
-    "INVALID_HOME_UNIQUE_CODE": "Үйдің бірегей коды қате. Алдымен басқа үйді сканерлеңіз",
-    "TOKEN_EXPIRED": "Токеннің мерзімі аяқталды",
-    "UNAUTHORIZED": "Қате құпия сөз немесе электрондық пошта",
-    "ADMIN_NOT_FOUND": "Әкімші табылмады",
-    "USER_PHONE_NUMBER_ALREADY_EXISTS": "Телефон нөмірі бұрыннан бар",
-    "INTERNAL_SERVER_ERROR": "Сервер қатесі. Бізге Telegram арқылы хабарласыңыз",
-    "BLOCK_CONFIG_NOT_FOUND": "Блоктың конфигурациясы табылмады",
-    "ALTA_BIO_CLEAN_NOT_FOUND": "Alta Bio Clean табылмады",
-    "ALTA_PRODUCT_NOT_FOUND": "Alta өнімі табылмады",
-    "CITY_NOT_FOUND": "Қала табылмады",
-    "PUMP_PRESSURE_PIPE_DIAMETER_NOT_FOUND": "Насостың қысым құбырының диаметрі табылмады",
-    "PUMP_PRESSURE_PIPE_COUNT_NOT_FOUND": "Насостың құбыр саны табылмады",
-    "ACCEPTED_DIMENSIONS_HEIGHT_NOT_FOUND": "Қабылданған өлшемдердің биіктігі табылмады",
-    "SUPPLY_MANIFOLD_DIAMETER_NOT_FOUND": "Жеткізу коллекторының диаметрі табылмады",
-    "INLET_PIPE_NOT_FOUND": "Кіріс құбыры табылмады",
-    "PRESSURE_COLLECTOR_DIAMETER_NOT_FOUND": "Қысым жинақтаушының диаметрі табылмады",
-    "PRESSURE_COLLECTOR_COUNT_NOT_FOUND": "Қысым жинақтаушының саны табылмады",
-    "OUTLET_PIPE_COUNT_NOT_FOUND": "Шығыс құбыр саны табылмады",
-    "ACCESSORIES_MATERIAL_NOT_FOUND": "Аксессуарлар материалы табылмады",
-    "PIPE_GUIDES_NOT_FOUND": "Құбыр бағыттағыштары табылмады",
-    "CONTROL_CABINET_NOT_FOUND": "Басқару корпусы табылмады",
-    "ACCEPTED_DIMENSIONS_DIAMETER_NOT_FOUND": "Қабылданған өлшемдердің диаметрі табылмады",
-    "PRESSURE_GAUGE_NOT_FOUND": "Монометр табылмады",
-    "USER_EMAIL_ALREADY_EXISTS": "Осы электрондық пошта қолданыста",
-    "TOKEN_NOT_VALID": "Жарамсыз refresh токен",
-    "unknownError": "Белгісіз қате",
-    "serverError": "Сервер қатесі"
   }
 }

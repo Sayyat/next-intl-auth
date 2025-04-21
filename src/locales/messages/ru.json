@@ -1,69 +1,32 @@
 {
   "app": {
     "(ui)": {
-      "_components": {
-        "Header": {
-          "title": "Next Intl Auth Шаблон",
-          "toggleTheme": "Сменить тему",
-          "unknownUser": "Неизвестный пользователь",
-          "signOut": "Выйти",
-          "user": "Пользователь",
-          "openMenu": "Меню",
-          "closeMenu": "Закрыть"
-        },
-        "Footer": {
-          "version": "Версия: {version}",
-          "termsOfService": "Правила Использования",
-          "privacyPolicy": "Политика Конфиденциальности",
-          "createdBy": "Создано с ❤\uFE0F компанией ZIZ INC."
-        }
-      },
       "page": {
         "title": "Главная",
-        "welcomeMessage": "Здравствуйте, {username}!",
-        "customerData": "Клиент",
-        "poolType": "Тип бассейна",
-        "poolProperties": "Свойства бассейна",
-        "poolFields": "Параметры бассейна",
-        "pumpSelection": "Выбор насоса",
-        "previous": "Предыдущий",
-        "next": "Следующий",
-        "submit": "Отправить"
+        "welcomeMessage": "Здравствуйте, {username}!"
       }
     }
   },
   "core": {
     "components": {
-      "AppSidebar": {
-        "calculators": "Калькуляторы",
-        "householdGoods": "Хозбыт",
-        "ab": "AB",
-        "aamAndAamp": "AAM & AAMP",
-        "kns": "КНС",
-        "sub1": "SUB1",
-        "stormDrain": "Ливневка",
-        "managerInstruments": "Инструменты менеджера",
-        "displaySettings": "Настройки отображения",
-        "userCalculations": "Расчеты пользователей",
-        "analytics": "Аналитика"
-      },
       "Header": {
         "authorize": "Авторизоваться",
         "search": "Поиск"
       },
-      "DynamicBreadcrumb": {
+      "Footer": {
+        "createdBy": "Создано с ❤\uFE0F, в ZIZ INC."
+      }
+    },
+    "config": {
+      "routes": {
+        "group_1": "Группа 1",
         "home": "Главная",
-        "calculators": "Калькуляторы",
-        "householdGoods": "Хозбыт",
-        "ab": "AB",
-        "aamAndAamp": "AAM & AAMP",
-        "kns": "КНС",
-        "stormDrain": "Ливневка",
-        "calculationDetails": "Подробности расчета",
-        "managerInstruments": "Инструменты менеджера",
-        "displaySettings": "Настройки отображения",
-        "userCalculations": "Пользовательские расчеты",
-        "analytics": "Аналитика"
+        "dashboard": "Дашборд",
+        "analytics": "Аналитика",
+        "group_2": "Группа 2",
+        "about": "О нас",
+        "profile": "Профиль",
+        "settings": "Настройки"
       }
     }
   },
@@ -129,14 +92,6 @@
             "success": "Регистрация успешно завершена!",
             "error": "Произошла ошибка.",
             "unexpectedError": "Произошла неожиданная ошибка."
-          },
-          "status": {
-            "school": "Школьник",
-            "college": "Студент колледжа",
-            "university": "Студент университета",
-            "employee": "Работающий",
-            "search_edu": "Ищу образование",
-            "search_work": "Ищу работу"
           }
         },
         "ResetDialog": {
@@ -175,7 +130,7 @@
             "fullname": "Полное имя",
             "firstname": "Имя",
             "lastname": "Фамилия",
-            "contacts": "Контактая информация",
+            "contacts": "Контакты",
             "email": "E-mail",
             "phone": "Номер телефона",
             "organization": "Organization",
@@ -204,457 +159,6 @@
           }
         }
       }
-    },
-    "common": {
-      "components": {
-        "CommonFields": {
-          "jobStepSelect": "Выбор этапа работы",
-          "jobStep": "Этап работы",
-          "implementation": "Реализация",
-          "designing": "Проектирование",
-          "objectInformation": "Информация об объекте",
-          "city": "Город",
-          "objectName": "Название объекта"
-        }
-      },
-      "errors": {
-        "jobStep": {
-          "required": "Этап работы обязателен.",
-          "invalid_type": "Неверный тип для этапа работы."
-        },
-        "city": {
-          "required": "Город обязателен.",
-          "invalid_type": "Неверный тип для города."
-        },
-        "objectName": {
-          "required": "Название объекта обязательно.",
-          "invalid_type": "Неверный тип для названия объекта."
-        }
-      }
-    },
-    "display-settings": {
-      "components": {
-        "DisplaySettingsComponent": {
-          "displaySettings": "Настройки отображения",
-          "number": "Номер",
-          "name": "Имя",
-          "householdGoods": "Хозбыт",
-          "kns": "КНС",
-          "stormDrain": "Ливневка",
-          "calculations": "Расчеты"
-        }
-      }
-    },
-    "user-calculations": {
-      "components": {
-        "UserCalculationsComponent": {
-          "userCalculations": "Пользовательские расчеты",
-          "number": "Номер",
-          "name": "Имя",
-          "organization": "Организация",
-          "city": "Город",
-          "object_name": "Название объекта",
-          "created_at": "Дата",
-          "rowsCount": "Количество строк",
-          "nRows": "{n} строк",
-          "previous": "Предыдущий",
-          "next": "Следующий"
-        }
-      }
-    },
-    "household-goods": {
-      "components": {
-        "HouseholdGoodsCalculatorComponent": {
-          "householdGoodsCalculator": "Калькулятор бытовых товаров",
-          "aamAndAamp": "AAM & AAMP",
-          "aamAndAampCalculator": "AAM & AAMP калькулятор",
-          "aamAndAampCalculatorContent": "Совершайте вычисления для AAM & AAMP",
-          "ab": "AB",
-          "abCalculator": "AB калькулятор",
-          "abCalculatorContent": "Совершайте вычисления для AB",
-          "go": "Перейти"
-        },
-        "AamAndAampCalculatorComponent": {
-          "calculatorHouseholdGoods": "Калькулятор бытовых товаров",
-          "jobStepSelect": "Выбор этапа работы",
-          "jobStep": "Этап работы",
-          "objectInformation": "Информация об объекте",
-          "city": "Город",
-          "objectName": "Название объекта",
-          "aamAndAamp": "AAM & AAMP",
-          "dealData": "Данные сделки",
-          "dealNumber": "Номер сделки",
-          "initialData": "Исходные данные",
-          "wastewaterConsumption": "Расход сточных вод",
-          "totalVolumeOfVolleys": "Общий объем залповых сбросов",
-          "volleyCount": "Количество залпов",
-          "volleyDischargePerTime": "Залповый сброс за определенное время",
-          "timeBetweenVolleys": "Время между залпами",
-          "feederDepth": "Глубина подачи",
-          "disinfection": "Дезинфекция",
-          "dehydration": "Обезвоживание",
-          "AB": "AB",
-          "volley": "Залп",
-          "recommendedEquipments": "Рекомендуемое оборудование",
-          "number": "№",
-          "equipmentType": "Тип оборудования",
-          "model": "Модель",
-          "quantity": "Количество",
-          "unitPrice": "Цена за единицу",
-          "price": "Цена",
-          "neckSpecification": "Характеристика шеи",
-          "cleaningStation": "Станция очистки",
-          "necks": "Горловины",
-          "disinfectionUnit": "Блок обеззараживания",
-          "bufferCapacity": "Буферная емкость",
-          "dehydrationUnit": "Блок обезвоживания",
-          "mechanicalCleaningUnit": "Блок мех. очистки",
-          "notRequired": "Не требуется",
-          "notesTitle": "Примечания",
-          "notesBody": "Точное кол-во и длинна горловин уточняется после утверждения расстановки нашего оборудования на Ген.Плане. Стоимость буферной ёмкости указана примерной (точный расчёт после уточнения расстановки оборудования на Ген.Плане и подбора насосов. Стоимости для блоков мех.очистки и обезвоживания указаны также примерные, точный расчёт после согласования заявленной примерной стоимости.",
-          "bufferFillingSchedule": "График наполняемости буфера",
-          "total": "Итого",
-          "calculateAamAndAamp": "Расчитать AAM & AAMP",
-          "calculateAb": "Расчитать AB",
-          "showCalculationResults": "Показать результаты расчета",
-          "downloadHouseholdCalculation": "Скачать расчет хозбыта",
-          "submitApplication": "Подать заявку",
-          "screwDehydrator": "Шнековый обезвоживатель",
-          "grateOrAuger": "Решетка или шнек",
-          "": ""
-        },
-        "AbCalculatorComponent": {
-          "calculatorHouseholdGoods": "Калькулятор бытовых товаров",
-          "jobStepSelect": "Выбор этапа работы",
-          "jobStep": "Этап работы",
-          "objectInformation": "Информация об объекте",
-          "city": "Город",
-          "objectName": "Название объекта",
-          "aamAndAamp": "AAM & AAMP",
-          "dealData": "Данные сделки",
-          "dealNumber": "Номер сделки",
-          "initialData": "Исходные данные",
-          "wastewaterConsumption": "Расход сточных вод",
-          "totalVolumeOfVolleys": "Общий объем залповых сбросов",
-          "volleyCount": "Количество залпов",
-          "volleyDischargePerTime": "Залповый сброс за определенное время",
-          "timeBetweenVolleys": "Время между залпами",
-          "feederDepth": "Глубина подачи",
-          "disinfection": "Дезинфекция",
-          "dehydration": "Обезвоживание",
-          "AB": "AB",
-          "volley": "Залп",
-          "recommendedEquipments": "Рекомендуемое оборудование",
-          "number": "№",
-          "equipmentType": "Тип оборудования",
-          "model": "Модель",
-          "quantity": "Количество",
-          "unitPrice": "Цена за единицу",
-          "price": "Цена",
-          "neckSpecification": "Характеристика шеи",
-          "cleaningStation": "Станция очистки",
-          "necks": "Горловины",
-          "disinfectionUnit": "Блок обеззараживания",
-          "bufferCapacity": "Буферная емкость",
-          "dehydrationUnit": "Блок обезвоживания",
-          "mechanicalCleaningUnit": "Блок мех. очистки",
-          "notRequired": "Не требуется",
-          "notesTitle": "Примечания",
-          "notesBody": "Точное кол-во и длинна горловин уточняется после утверждения расстановки нашего оборудования на Ген.Плане. Стоимость буферной ёмкости указана примерной (точный расчёт после уточнения расстановки оборудования на Ген.Плане и подбора насосов. Стоимости для блоков мех.очистки и обезвоживания указаны также примерные, точный расчёт после согласования заявленной примерной стоимости.",
-          "bufferFillingSchedule": "График наполняемости буфера",
-          "total": "Итого",
-          "calculateAamAndAamp": "Расчитать AAM & AAMP",
-          "calculateAb": "Расчитать AB",
-          "showCalculationResults": "Показать результаты расчета",
-          "downloadHouseholdCalculation": "Скачать расчет хозбыта",
-          "submitApplication": "Подать заявку",
-          "screwDehydrator": "Шнековый обезвоживатель",
-          "grateOrAuger": "Решетка или шнек",
-          "": ""
-        }
-      }
-    },
-    "kns": {
-      "components": {
-        "KnsComponent": {
-          "calculatorHouseholdGoods": "Калькулятор бытовых товаров",
-          "jobStepSelect": "Выбор этапа работы",
-          "jobStep": "Этап работы",
-          "implementation": "Реализация",
-          "designing": "Проектирование",
-          "objectInformation": "Информация об объекте",
-          "city": "Город",
-          "objectName": "Название объекта",
-          "aamAndAamp": "AAM & AAMP",
-          "dealData": "Данные сделки и КНС",
-          "dealNumber": "Номер сделки",
-          "knsNumber": "Номер КНС",
-          "initialData": "Исходные данные",
-          "flowRate": "Расход (куб.м/час)",
-          "pressure": "Напор (м)",
-          "supplyManifold": "Подводящий коллектор",
-          "diameter": "Диаметр",
-          "depth": "Глубина",
-          "quantity": "Количество",
-          "pressureManifold": "Напорный коллектор",
-          "height": "Высота",
-          "pump": "Насос",
-          "pumpHeight": "Высота",
-          "pumpDiameter": "Диаметр",
-          "pumpLength": "Длина насоса",
-          "pumpWidth": "Ширина насоса",
-          "working": "Рабочий",
-          "reserve": "Резервный",
-          "startsPerHour": "Пусков в час",
-          "totalStarts": "Общее количество пусков",
-          "nominalPower": "Номинальная мощность (кВт)",
-          "nominalAmperage": "Номинальный ток (А)",
-          "pressurePipeDiameter": "Диаметр напорного патрубка (мм)",
-          "pipeGuideDiameter": "Диаметр трубных направляющих (дюйм)",
-          "pumpWeight": "Вес (кг)",
-          "dimensionsCalculation": "Расчет габаритов",
-          "recommendedDiameter": "Рекомендуемый диаметр",
-          "recommendedHeight": "Рекомендуемая высота",
-          "dimensionsByCustomer": "Расчет габаритов под требования заказчика",
-          "requiredDiameter": "Требуемый диаметр",
-          "allowableHeight": "Допустимая высота",
-          "acceptedDimensions": "Принятые габариты КНС",
-          "additionalEquipments": "Доп. эл. оборудования",
-          "additionalEquipment": "Доп. эл. оборудование №{index}",
-          "add": "Добавить",
-          "remove": "Удалить",
-          "knsEquipmentCalculation": "Расчёт оснастки КНС",
-          "number": "№",
-          "name": "Наименование",
-          "specification": "Спецификация",
-          "price": "Цена (₸)",
-          "totalCost": "Стоимость (₸)",
-          "sensors": "Датчики",
-          "floatLevelRegulator": "Регулятор уровня поплавковый IGD 10S",
-          "pumpATM": "Насос + АТМ",
-          "additionalGateValves": "Дополнительные задвижки",
-          "additionalCheckValves": "Дополнительные обратные клапаны",
-          "chain": "Цепь (м)",
-          "workingLoad": "Рабочая нагрузка - 80 кг",
-          "pipeNode": "Трубный узел (м)",
-          "basket": "Корзина",
-          "inletPipe": "Входной патрубок",
-          "pressurePipe": "Напорный патрубок",
-          "ladder": "Лестница",
-          "manometer": "Манометр",
-          "guidePipes": "Направляющие трубы (м)",
-          "controlCabinet": "Шкаф управления (мощность кВт; ток ОА)",
-          "knsBuilding": "Корпус КНС",
-          "controlCabinetPodium": "Подиум под шкаф управления",
-          "neck": "Горловина",
-          "cover": "Крышка",
-          "open": "Открыто",
-          "diameterInches": "11,4 дюйма",
-          "total": "Итого",
-          "calculate": "Расчитать",
-          "resetForm": "Очистить форму",
-          "showCalculationResults": "Показать результаты расчета",
-          "downloadKnsCalculation": "Скачать расчет КНС",
-          "submitApplication": "Подать заявку",
-          "": ""
-        }
-      },
-      "hooks": {
-        "useKnsCalculations": {
-          "success": "✅ KNS расчёты успешно завершены!",
-          "error": "❌ Ошибка при расчётах KNS",
-          "missing": {
-            "pumpPressurePipeDiameter": "Не выбран диаметр трубопровода давления для насоса",
-            "pumpPipeGuideDiameter": "Не выбран диаметр трубного направляющего для насоса",
-            "acceptedDimensionsHeight": "Не выбрана высота для принятых размеров",
-            "acceptedDimensionsDiameter": "Не выбран диаметр для принятых размеров",
-            "pressureCollectorDiameter": "Не выбран показатель количества для коллектора давления",
-            "pressureCollectorAmount": "Не выбран показатель количества для коллектора давления",
-            "supplyManifoldDiameter": "Не выбран диаметр распределительного коллектора"
-          }
-        }
-      },
-      "errors": {
-        "deal": {
-          "dealNumber": {
-            "required": "Номер сделки обязателен.",
-            "invalid_type": "Неверный тип для номера сделки."
-          },
-          "knsNumber": {
-            "required": "Номер KNS обязателен.",
-            "invalid_type": "Неверный тип для номера KNS."
-          }
-        },
-        "initialData": {
-          "flowRate": {
-            "nonnegative": "Расход должен быть неотрицательным.",
-            "required": "Расход обязателен.",
-            "invalid_type": "Неверный тип для расхода."
-          },
-          "pressure": {
-            "nonnegative": "Давление должно быть неотрицательным.",
-            "required": "Давление обязательно.",
-            "invalid_type": "Неверный тип для давления."
-          },
-          "price": {
-            "nonnegative": "Цена должна быть неотрицательной.",
-            "required": "Цена обязательна.",
-            "invalid_type": "Неверный тип для цены."
-          },
-          "controlCabinet": {
-            "required": "Контрольный шкаф обязателен.",
-            "invalid_type": "Неверный тип для контрольного шкафа."
-          }
-        },
-        "supplyManifold": {
-          "diameter": {
-            "required": "Диаметр подводящего коллектора обязателен.",
-            "invalid_type": "Неверный тип для диаметра подводящего коллектора."
-          },
-          "depth": {
-            "nonnegative": "Глубина подводящего коллектора должна быть неотрицательной.",
-            "required": "Глубина подводящего коллектора обязательна.",
-            "invalid_type": "Неверный тип для глубины подводящего коллектора."
-          },
-          "amount": {
-            "nonnegative": "Количество подводящего коллектора должно быть неотрицательным.",
-            "required": "Количество подводящего коллектора обязательно.",
-            "invalid_type": "Неверный тип для количества подводящего коллектора."
-          }
-        },
-        "pressureCollector": {
-          "diameter": {
-            "required": "Диаметр напорного коллектора обязателен.",
-            "invalid_type": "Неверный тип для диаметра напорного коллектора."
-          },
-          "amount": {
-            "required": "Количество напорного коллектора обязательно.",
-            "nonnegative": "Количество напорного коллектора должно быть неотрицательным.",
-            "invalid_type": "Неверный тип для количества напорного коллектора."
-          },
-          "depth": {
-            "nonnegative": "Глубина напорного коллектора должна быть неотрицательной.",
-            "required": "Глубина напорного коллектора обязательна.",
-            "invalid_type": "Неверный тип для глубины напорного коллектора."
-          }
-        },
-        "pump": {
-          "working": {
-            "nonnegative": "Количество рабочих насосов должно быть неотрицательным.",
-            "required": "Количество рабочих насосов обязательно.",
-            "invalid_type": "Неверный тип для количества рабочих насосов."
-          },
-          "reserve": {
-            "nonnegative": "Количество резервных насосов должно быть неотрицательным.",
-            "required": "Количество резервных насосов обязательно.",
-            "invalid_type": "Неверный тип для количества резервных насосов."
-          },
-          "pressurePipeDiameter": {
-            "required": "Диаметр напорного патрубка обязателен.",
-            "invalid_type": "Неверный тип для диаметра напорного патрубка."
-          },
-          "pipeGuideDiameter": {
-            "required": "Диаметр трубных направляющих обязателен.",
-            "invalid_type": "Неверный тип для диаметра трубных направляющих."
-          },
-          "height": {
-            "nonnegative": "Высота насоса должна быть неотрицательной.",
-            "required": "Высота насоса обязательна.",
-            "invalid_type": "Неверный тип для высоты насоса."
-          },
-          "diameter": {
-            "nonnegative": "Диаметр насоса должен быть неотрицательным.",
-            "required": "Диаметр насоса обязателен.",
-            "invalid_type": "Неверный тип для диаметра насоса."
-          },
-          "length": {
-            "nonnegative": "Длина насоса должна быть неотрицательной.",
-            "required": "Длина насоса обязательна.",
-            "invalid_type": "Неверный тип для длины насоса."
-          },
-          "width": {
-            "nonnegative": "Ширина насоса должна быть неотрицательной.",
-            "required": "Ширина насоса обязательна.",
-            "invalid_type": "Неверный тип для ширины насоса."
-          },
-          "startsPerHour": {
-            "nonnegative": "Количество пусков насоса в час должно быть неотрицательным.",
-            "required": "Количество пусков насоса в час обязательно.",
-            "invalid_type": "Неверный тип для количества пусков насоса в час."
-          },
-          "totalStarts": {
-            "nonnegative": "Общее количество пусков насоса должно быть неотрицательным.",
-            "required": "Общее количество пусков насоса обязательно.",
-            "invalid_type": "Неверный тип для общего количества пусков насоса."
-          },
-          "power": {
-            "nonnegative": "Мощность насоса должна быть неотрицательной.",
-            "required": "Мощность насоса обязательна.",
-            "invalid_type": "Неверный тип для мощности насоса."
-          },
-          "amperage": {
-            "nonnegative": "Сила тока насоса должна быть неотрицательной.",
-            "required": "Сила тока насоса обязательна.",
-            "invalid_type": "Неверный тип для силы тока насоса."
-          },
-          "weight": {
-            "nonnegative": "Вес насоса должен быть неотрицательным.",
-            "required": "Вес насоса обязателен.",
-            "invalid_type": "Неверный тип для веса насоса."
-          }
-        },
-        "dimensionCalculations": {
-          "recommendedDiameter": {
-            "required": "Рекомендуемый диаметр обязателен.",
-            "invalid_type": "Неверный тип для рекомендуемого диаметра.",
-            "nonnegative": "Рекомендуемый диаметр не может быть меньше 0."
-          },
-          "recommendedHeight": {
-            "required": "Рекомендуемая высота обязательна.",
-            "invalid_type": "Неверный тип для рекомендуемой высоты.",
-            "nonnegative": "Рекомендуемая высота не может быть меньше 0."
-          }
-        },
-        "accordingCustomerRequirementsDimensionCalculations": {
-          "requiredDiameter": {
-            "required": "Обязательный диаметр по требованиям заказчика обязателен.",
-            "invalid_type": "Неверный тип для обязательного диаметра по требованиям заказчика.",
-            "nonnegative": "Обязательный диаметр не может быть меньше 0."
-          },
-          "allowableHeight": {
-            "required": "Допустимая высота по требованиям заказчика обязательна.",
-            "invalid_type": "Неверный тип для допустимой высоты по требованиям заказчика.",
-            "nonnegative": "Допустимая высота не может быть меньше 0."
-          }
-        },
-        "acceptedDimensions": {
-          "height": {
-            "required": "Высота принятых размеров обязательна.",
-            "invalid_type": "Неверный тип для высоты принятых размеров."
-          },
-          "diameter": {
-            "required": "Диаметр принятых размеров обязателен.",
-            "invalid_type": "Неверный тип для диаметра принятых размеров."
-          }
-        },
-        "additionalEquipment": {
-          "power": {
-            "nonnegative": "Мощность оборудования должна быть неотрицательной.",
-            "required": "Мощность оборудования обязательна.",
-            "invalid_type": "Неверный тип для мощности оборудования."
-          },
-          "amperage": {
-            "nonnegative": "Сила тока оборудования должна быть неотрицательной.",
-            "required": "Сила тока оборудования обязательна.",
-            "invalid_type": "Неверный тип для силы тока оборудования."
-          },
-          "amount": {
-            "nonnegative": "Количество оборудования должно быть неотрицательным.",
-            "required": "Количество оборудования обязательно.",
-            "invalid_type": "Неверный тип для количества оборудования."
-          }
-        }
-      }
     }
   },
   "shared": {
@@ -666,10 +170,44 @@
         "kk": "Казахский"
       },
       "ThemeToggle": {
+        "label": "Сменить тему",
         "light": "Светлая",
         "dark": "Темная",
         "system": "Системная"
       }
+    },
+    "services": {
+      "INVALID_DATA": "Недопустимые входные данные",
+      "EMAIL_EXISTS": "Электронная почта уже существует",
+      "WRONG_PASSWORD": "Неверный пароль",
+      "ALL_STEPS_COMPLETED": "Все шаги уже выполнены для данного сценария",
+      "INVALID_HOME_UNIQUE_CODE": "Неверный уникальный код дома. Сначала необходимо отсканировать другой дом",
+      "TOKEN_EXPIRED": "Срок действия токена истек",
+      "UNAUTHORIZED": "Неверный пароль или адрес электронной почты",
+      "ADMIN_NOT_FOUND": "Администратор не найден",
+      "USER_PHONE_NUMBER_ALREADY_EXISTS": "Номер телефона уже существует",
+      "INTERNAL_SERVER_ERROR": "Ошибка сервера. Пожалуйста, отправьте сообщение разработчику в Telegram",
+      "BLOCK_CONFIG_NOT_FOUND": "Конфигурация блока не найдена",
+      "ALTA_BIO_CLEAN_NOT_FOUND": "Alta Bio Clean не найден",
+      "ALTA_PRODUCT_NOT_FOUND": "Alta продукт не найден",
+      "CITY_NOT_FOUND": "Город не найден",
+      "PUMP_PRESSURE_PIPE_DIAMETER_NOT_FOUND": "Диаметр насосного трубопровода не найден",
+      "PUMP_PRESSURE_PIPE_COUNT_NOT_FOUND": "Количество насосных трубопроводов не найдено",
+      "ACCEPTED_DIMENSIONS_HEIGHT_NOT_FOUND": "Высота принятых размеров не найдена",
+      "SUPPLY_MANIFOLD_DIAMETER_NOT_FOUND": "Диаметр распределительного коллектора не найден",
+      "INLET_PIPE_NOT_FOUND": "Входная труба не найдена",
+      "PRESSURE_COLLECTOR_DIAMETER_NOT_FOUND": "Диаметр коллектора давления не найден",
+      "PRESSURE_COLLECTOR_COUNT_NOT_FOUND": "Количество коллектора давления не найдено",
+      "OUTLET_PIPE_COUNT_NOT_FOUND": "Количество выходных труб не найдено",
+      "ACCESSORIES_MATERIAL_NOT_FOUND": "Материал аксессуаров не найден",
+      "PIPE_GUIDES_NOT_FOUND": "Направляющие труб не найдены",
+      "CONTROL_CABINET_NOT_FOUND": "Корпус управления не найден",
+      "ACCEPTED_DIMENSIONS_DIAMETER_NOT_FOUND": "Диаметр принятых размеров не найден",
+      "PRESSURE_GAUGE_NOT_FOUND": "Монометр не найден",
+      "USER_EMAIL_ALREADY_EXISTS": "Пользователь с этой электронной почтой уже существует",
+      "TOKEN_NOT_VALID": "Неверный refresh токен",
+      "unknownError": "Неизвестная ошибка",
+      "serverError": "Ошибка сервера"
     }
   },
   "auth": {
@@ -702,38 +240,5 @@
         "mismatch": "Пароль и подтверждение пароля не совпадают!"
       }
     }
-  },
-  "services": {
-    "INVALID_DATA": "Недопустимые входные данные",
-    "EMAIL_EXISTS": "Электронная почта уже существует",
-    "WRONG_PASSWORD": "Неверный пароль",
-    "ALL_STEPS_COMPLETED": "Все шаги уже выполнены для данного сценария",
-    "INVALID_HOME_UNIQUE_CODE": "Неверный уникальный код дома. Сначала необходимо отсканировать другой дом",
-    "TOKEN_EXPIRED": "Срок действия токена истек",
-    "UNAUTHORIZED": "Неверный пароль или адрес электронной почты",
-    "ADMIN_NOT_FOUND": "Администратор не найден",
-    "USER_PHONE_NUMBER_ALREADY_EXISTS": "Номер телефона уже существует",
-    "INTERNAL_SERVER_ERROR": "Ошибка сервера. Пожалуйста, отправьте сообщение разработчику в Telegram",
-    "BLOCK_CONFIG_NOT_FOUND": "Конфигурация блока не найдена",
-    "ALTA_BIO_CLEAN_NOT_FOUND": "Alta Bio Clean не найден",
-    "ALTA_PRODUCT_NOT_FOUND": "Alta продукт не найден",
-    "CITY_NOT_FOUND": "Город не найден",
-    "PUMP_PRESSURE_PIPE_DIAMETER_NOT_FOUND": "Диаметр насосного трубопровода не найден",
-    "PUMP_PRESSURE_PIPE_COUNT_NOT_FOUND": "Количество насосных трубопроводов не найдено",
-    "ACCEPTED_DIMENSIONS_HEIGHT_NOT_FOUND": "Высота принятых размеров не найдена",
-    "SUPPLY_MANIFOLD_DIAMETER_NOT_FOUND": "Диаметр распределительного коллектора не найден",
-    "INLET_PIPE_NOT_FOUND": "Входная труба не найдена",
-    "PRESSURE_COLLECTOR_DIAMETER_NOT_FOUND": "Диаметр коллектора давления не найден",
-    "PRESSURE_COLLECTOR_COUNT_NOT_FOUND": "Количество коллектора давления не найдено",
-    "OUTLET_PIPE_COUNT_NOT_FOUND": "Количество выходных труб не найдено",
-    "ACCESSORIES_MATERIAL_NOT_FOUND": "Материал аксессуаров не найден",
-    "PIPE_GUIDES_NOT_FOUND": "Направляющие труб не найдены",
-    "CONTROL_CABINET_NOT_FOUND": "Корпус управления не найден",
-    "ACCEPTED_DIMENSIONS_DIAMETER_NOT_FOUND": "Диаметр принятых размеров не найден",
-    "PRESSURE_GAUGE_NOT_FOUND": "Монометр не найден",
-    "USER_EMAIL_ALREADY_EXISTS": "Пользователь с этой электронной почтой уже существует",
-    "TOKEN_NOT_VALID": "Неверный refresh токен",
-    "unknownError": "Неизвестная ошибка",
-    "serverError": "Ошибка сервера"
   }
 }
