@@ -1,81 +1,95 @@
-import {Calculator, ChartSpline, SquareUser, ToggleLeft} from "lucide-react";
-import React from "react";
+/*
+ * Copyright (c) 2025. Sayat Raykul
+ */
 
-export interface AppRoute {
-    titleKey: string; // Localization key
-    url: string;
-    icon?: React.ElementType;
-}
-
-export interface AppRoute {
-    titleKey: string; // Localization key
-    url: string;
-    icon?: React.ElementType;
-    subRoutes?: AppRoute[]; // ✅ Add optional sub-routes
-}
+import {
+  Calculator,
+  ChartSpline,
+  Home,
+  SquareUser,
+  ToggleLeft,
+  Group,
+  Info,
+  Settings,
+  Sheet,
+  PieChart,
+} from "lucide-react";
+import { IAppRoute, TRouteKey } from "@/core/types/routes";
 
 // Common Calculator Pages
-export const COMMON_ROUTES: AppRoute[] = [
-    {
-        titleKey: "householdGoods",
-        url: "/calculators/household-goods",
-        icon: Calculator,
-        subRoutes: [
-            {
-                titleKey: "aamAndAamp",
-                url: "/calculators/household-goods/aam-and-aamp",
-                icon: Calculator,
-            },
-            {
-                titleKey: "ab",
-                url: "/calculators/household-goods/ab",
-                icon: Calculator,
-            },
-        ],
-    },
-    {
-        titleKey: "kns",
-        url: "/calculators/kns",
-        icon: Calculator,
-    },
-    {
-        titleKey: "stormDrain",
-        url: "/calculators/storm-drain",
-        icon: Calculator,
-    },
+export const COMMON_ROUTES: IAppRoute[] = [
+  {
+    titleKey: "home",
+    url: "/",
+    icon: Home,
+  },
+  {
+    titleKey: "group_1",
+    url: "/group-1",
+    icon: Group,
+    subRoutes: [
+      {
+        titleKey: "about",
+        url: "/group-1/about",
+        icon: Info,
+      },
+      {
+        titleKey: "profile",
+        url: "/group-1/profile",
+        icon: SquareUser,
+      },
+    ],
+  },
+  {
+    titleKey: "settings",
+    url: "/settings",
+    icon: Settings,
+  },
 ];
 
 // Manager Pages
-export const MANAGER_ROUTES: AppRoute[] = [
-    {
-        titleKey: "displaySettings",
-        url: "/manager-instruments/display-settings",
-        icon: ToggleLeft,
-    },
-    {
-        titleKey: "userCalculations",
-        url: "/manager-instruments/user-calculations",
-        icon: SquareUser,
-    },
-    {
+export const MANAGER_ROUTES: IAppRoute[] = [
+  {
+    titleKey: "group_2",
+    url: "/group-2",
+    icon: Group,
+    subRoutes: [
+      {
+        titleKey: "dashboard",
+        url: "/group-2/dashboard",
+        icon: Sheet,
+      },
+      {
         titleKey: "analytics",
-        url: "/manager-instruments/analytics",
-        icon: ChartSpline,
-    },
+        url: "/group-2/analytics",
+        icon: PieChart,
+      },
+    ],
+  },
 ];
 
 // Breadcrumb Labels (Override for Special Cases)
-export const BREADCRUMB_LABELS: Record<string, string> = {
-    "calculators": "calculators",
-    "household-goods": "householdGoods",
-    "aam-and-aamp": "aamAndAamp",
-    "ab": "AB",
-    "kns": "KNS",
-    "storm-drain": "stormDrain",
-    "calculating-details": "calculatingDetails",
-
-    "manager-instruments": "managerInstruments",
-    "display-settings": "displaySettings",
-    "user-calculations": "userCalculations",
-    "analytics": "analytics",
+export const BREADCRUMB_LABELS: Record<string, TRouteKey> = {
+  home: "home",
+  "group-1": "group_1",
+  "group-2": "group_2",
+  about: "about",
+  profile: "profile",
+  settings: "settings",
+  dashboard: "dashboard",
+  analytics: "analytics",
 };
+
+export function flattenRoutes(routes: IAppRoute[]): Record<string, IAppRoute> {
+  const map: Record<string, IAppRoute> = {};
+
+  const addRoute = (route: IAppRoute) => {
+    map[route.url] = route;
+    if (route.subRoutes) {
+      route.subRoutes.forEach(addRoute);
+    }
+  };
+
+  routes.forEach(addRoute);
+  return map;
+}

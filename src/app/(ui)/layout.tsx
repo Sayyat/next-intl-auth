@@ -3,11 +3,16 @@
  */
 
 import React from "react";
-import { SidebarInset, SidebarProvider } from "@/shared/components/ui/sidebar";
+import {
+  SidebarInset,
+  SidebarProvider,
+  SidebarTrigger,
+} from "@/shared/components/ui/sidebar";
 import { AppSidebar } from "@/core/components/AppSidebar";
 import { Header } from "@/core/components/Header";
 import { DynamicBreadcrumb } from "@/core/components/DynamicBreadcrumb";
 import { Footer } from "@/core/components/Footer";
+import { Separator } from "@/shared/components/ui/separator";
 
 export default async function UILayout({
   children,
@@ -17,9 +22,13 @@ export default async function UILayout({
   return (
     <SidebarProvider className="h-full">
       <AppSidebar />
-      <div className="relative flex w-full flex-1 flex-col mx-4">
+      <div className="relative flex w-full flex-1 flex-col mx-4 pt-2">
         <Header />
-        <DynamicBreadcrumb />
+        <div className="flex items-center">
+          <SidebarTrigger size="icon" className="" />
+          <div className="w-px h-5 bg-primary" />
+          <DynamicBreadcrumb />
+        </div>
         <SidebarInset className="h-full rounded-xl overflow-auto border-b-none">
           {children}
         </SidebarInset>

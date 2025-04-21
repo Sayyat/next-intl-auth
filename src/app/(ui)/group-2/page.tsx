@@ -12,6 +12,14 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center w-full">
       <span>{t("welcomeMessage", { username: data?.firstname ?? "" })}</span>
+
+      <div className="h-40">s</div>
+      <div className="h-40">s</div>
+      <div className="h-40">s</div>
+      <div className="h-40">s</div>
+      <div className="h-40">s</div>
+      <div className="h-40">s</div>
+      <div className="h-40">s</div>
     </div>
   );
 }

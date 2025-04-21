@@ -62,11 +62,11 @@ export const metadata: Metadata = {
   },
   generator: "Next js",
   icons: {
-    icon: "/assets/logo",
-    shortcut: "/assets/logo",
-    apple: "/assets/logo",
+    icon: "/assets/android-chrome-192x192.png",
+    shortcut: "/assets/android-chrome-512x512.png",
+    apple: "/assets/apple-touch-icon.png",
   },
-  manifest: "https://next-intl-auth-mu.vercel.app/icons/site.webmanifest",
+  manifest: "https://next-intl-auth-mu.vercel.app/site.webmanifest",
 };
 
 export default async function RootLayout({

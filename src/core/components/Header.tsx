@@ -33,10 +33,9 @@ export function Header() {
   const { data: profile } = useProfile();
 
   return (
-    <header className="bg-sidebar flex items-center justify-between gap-4">
+    <header className="bg-sidebar flex items-center justify-between gap-2">
       {/* Title */}
-      <div className="gap-4 h-14 w-full grid grid-cols-[36px_36px_1fr_72px_1fr] items-center">
-        <SidebarTrigger size="lg" className="size-9 bg-background" />
+      <div className="gap-4 h-10 w-full grid grid-cols-[36px_1fr_72px_1fr] items-center">
         <ProfileImageIcon className="size-9" />
         <div className="flex flex-col items-start justify-between">
           {status === "loading" && <Skeleton className="w-full" />}
@@ -60,7 +59,7 @@ export function Header() {
           )}
         </div>
 
-        <div className="">
+        <div className="flex flex-row">
           <LanguageSelect />
           <ThemeSelect />
         </div>

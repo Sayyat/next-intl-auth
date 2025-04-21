@@ -5,7 +5,7 @@
 import { useTranslations } from "next-intl";
 
 export function Footer() {
-  const t = useTranslations("app.(ui)._components.Footer");
+  const t = useTranslations("core.components.Footer");
 
   return (
     <div className="flex items-center justify-center gap-2 h-8">
