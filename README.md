@@ -13,31 +13,6 @@ Production-ready Next.js boilerplate for authentication, i18n, theming and testi
 [![GitHub Last Commit](https://img.shields.io/github/last-commit/Sayyat/next-intl-auth)](https://github.com/Sayyat/next-intl-auth/commits/main)
 
 ---
-<div align="center">
-  <a href="https://github.com/Sayyat/next-intl-auth/issues">
-    <img src="https://img.shields.io/github/issues/Sayyat/next-intl-auth" alt="GitHub Issues" />
-  </a>
-  <a href="https://next-intl-auth-mu.vercel.app/">
-    <img src="https://vercelbadge.vercel.app/api/Sayyat/next-intl-auth" alt="Vercel" />
-  </a>
-  <a href="https://github.com/Sayyat/next-intl-auth">
-    <img src="https://img.shields.io/github/stars/Sayyat/next-intl-auth?style=social" alt="GitHub Stars" />
-  </a>
-  <a href="https://github.com/Sayyat/next-intl-auth">
-    <img src="https://img.shields.io/github/forks/Sayyat/next-intl-auth?style=social" alt="GitHub Forks" />
-  </a>
-  <a href="https://github.com/Sayyat/next-intl-auth/commits/main">
-    <img src="https://img.shields.io/github/last-commit/Sayyat/next-intl-auth" alt="Last Commit" />
-  </a>
-  <a href="https://opensource.org/licenses/GPL-3.0">
-    <img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="License: GPL v3" />
-  </a>
-  <a href="https://nextjs.org/">
-    <img src="https://img.shields.io/badge/Built%20with-Next.js-000?logo=nextdotjs" alt="Built with Next.js" />
-  </a>
-</div>
-
-
 
 ## 🔥 Preview
 
