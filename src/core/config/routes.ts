@@ -3,16 +3,13 @@
  */
 
 import {
-  Calculator,
-  ChartSpline,
-  Home,
-  SquareUser,
-  ToggleLeft,
   Group,
+  Home,
   Info,
+  PieChart,
   Settings,
   Sheet,
-  PieChart,
+  SquareUser,
 } from "lucide-react";
 import { IAppRoute, TRouteKey } from "@/core/types/routes";
 

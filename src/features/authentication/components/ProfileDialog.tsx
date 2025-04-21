@@ -31,7 +31,6 @@ import { useProfile } from "@/features/authentication/hooks/useProfile";
 import { createEditProfileSchema } from "@/features/authentication/lib/zod";
 import { signOut } from "next-auth/react";
 import { FloatingLabelInput } from "@/shared/components/FloatingLabelInput";
-import { useCities } from "@/features/authentication/hooks/useCities";
 import { useScopedTranslator } from "@/locales/config/translation";
 
 interface IProfileDialogProps {
@@ -49,7 +48,6 @@ export const ProfileDialog: React.FC<IProfileDialogProps> = ({
     updateProfileMutation,
     updateProfileImageMutation,
   } = useProfile();
-  const { data: cities } = useCities();
 
   const [isEditing, setIsEditing] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);

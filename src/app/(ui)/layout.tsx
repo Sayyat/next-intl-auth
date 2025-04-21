@@ -12,7 +12,6 @@ import { AppSidebar } from "@/core/components/AppSidebar";
 import { Header } from "@/core/components/Header";
 import { DynamicBreadcrumb } from "@/core/components/DynamicBreadcrumb";
 import { Footer } from "@/core/components/Footer";
-import { Separator } from "@/shared/components/ui/separator";
 
 export default async function UILayout({
   children,

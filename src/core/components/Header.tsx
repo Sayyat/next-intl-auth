@@ -16,18 +16,17 @@ import { LanguageSelect } from "@/shared/components/LanguageSelect";
 import { ThemeSelect } from "@/shared/components/ThemeSelect";
 
 import {
-  ProfileImageIcon,
+  EmailSentDialog,
   LoginDialog,
+  ProfileDialog,
+  ProfileImageIcon,
   RegisterDialog,
   ResetDialog,
-  EmailSentDialog,
-  ProfileDialog,
   useProfile,
 } from "@/features/authentication";
-import { SidebarTrigger } from "@/shared/components/ui/sidebar";
 
 export function Header() {
-  const { data: session, status } = useSession();
+  const { status } = useSession();
   const t = useTranslations("core.components.Header");
   const [currentModal, setCurrentModal] = useState<TAuthModal>();
   const { data: profile } = useProfile();

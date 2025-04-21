@@ -79,7 +79,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         email: {},
         password: {},
       },
-      async authorize(credentials, req) {
+      async authorize(credentials, _) {
         const t = await getScopedTranslator("auth");
         // 1. Validate login input
         const { success, data, error } =
