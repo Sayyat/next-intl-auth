@@ -83,6 +83,11 @@ export default async function RootLayout({
           content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no"
         />
         <title>Next Intl Auth</title>
+        <script
+          className="ziz-chatbot"
+          src="https://widget-enbek.kz.ziz.kz/chatBot.bundle.js"
+          async
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

@@ -122,10 +122,6 @@ src/
 │   │   └── RenderSidebarGroup.tsx
 │   ├── config/
 │   │   └── routes.ts
-│   ├── data/
-│   │   └── env/
-│   │       ├── client.ts
-│   │       └── server.ts
 │   ├── hooks/
 │   │   └── useDynamicBreadcrumb.ts
 │   ├── providers/
@@ -133,7 +129,7 @@ src/
 │   │   └── ThemeProvider.tsx
 │   ├── styles/
 │   │   └── globals.css
-│   └── utils/
+│   └── types/
 │       │── header.d.ts
 │       └── routes.d.ts
 ├── features/
@@ -193,6 +189,10 @@ src/
 │   │   ├── nav-user.tsx
 │   │   ├── Select.tsx
 │   │   └── ThemeSelect.tsx
+│   ├── data/
+│   │   └── env/
+│   │       ├── client.ts
+│   │       └── server.ts
 │   ├── hooks/ shadcn hooks + custom shared hooks
 │   │   ├── use-mobile.ts
 │   │   └── use-toast.ts
